@@ -1,0 +1,173 @@
+#simulator {}
+#data {
+    width: 670px;
+    background-color: #ffb600;
+    padding-left: 60px;
+    padding-bottom: 200px;
+    padding-top: 100px;
+    display: inline-block;
+}
+div#data h2 {}
+div#data .column {
+    display: inline-block;
+    width: 160px;
+    vertical-align: top;
+}
+div#data span.label {
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+}
+div#data select {
+    width: 120px;
+    margin-bottom: 25px;
+}
+div#data button {
+    width: 120px;
+}
+/* #data bottom columns */
+div#data .column-lg {
+    display: inline-block;
+    margin-top: 25px;
+    width: 324px;
+}
+div#data .column-lg button {
+    width: 284px;
+}
+
+/* Job Pool */
+#job-pool {
+    display: inline-block;
+    vertical-align: top;
+    height: 496px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: #00f9ff;
+}
+div#job-pool table {
+    border: 2px solid black;
+}
+div#job-pool table tr {
+}
+div#job-pool table tr th {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    border: 2px solid black;
+}
+div#job-pool table tr td {
+    border: 2px solid black;
+    text-align: center;
+}
+
+/* CPU */
+#cpu {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #00c000;
+    width: 495px;
+    padding-left: 60px;
+    padding-right: 175px;
+    height: 300px;
+}
+div#cpu .cpu-col {
+    width: 120px;
+    display: inline-block;
+}
+div#cpu span {
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+}
+div#cpu h3 {
+    width: 100px;
+    text-align: center;
+}
+
+/* Ready Queue */
+#ready-queue {
+    display: inline-block;
+    vertical-align: top;
+    height: 300px;
+    background-color: #ebebeb;
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 720px;
+}
+div#ready-queue div.ready-bars {}
+span.ready-bar {
+    width: 50px;
+    display: inline-block;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+span.ready-bar.bar-0 {
+    background-color: red;
+}
+span.ready-bar.bar-1 {
+    background-color: gray;
+}
+span.ready-bar.bar-2 {
+    background-color: black;
+}
+span.ready-bar.bar-3 {
+    background-color: blue;
+}
+span.ready-bar.bar-4 {
+    background-color: greenyellow;
+}
+span.ready-bar.bar-5 {
+    background-color: white;
+}
+span.ready-bar.bar-6 {
+    background-color: yellow;
+}
+span.ready-bar.bar-7 {
+    background-color: purple;
+}
+span.ready-bar.bar-8 {
+    background-color: orange;
+}
+span.ready-bar.bar-9 {
+    background-color: deeppink;
+}
+
+/* Average wait and turnaround times */
+#wait-turnarounds {
+    display: inline-block;
+    vertical-align: top;
+    background-color: fuchsia;
+    width: 200px;
+    padding-left: 60px;
+    padding-right: 60px;
+    height: 200px;
+}
+div#wait-turnarounds div.col {
+    display: inline-block;
+    margin-left: 20px;
+}
+div#wait-turnarounds span {
+    display: inline-block;
+    text-align: center;
+}
+div#wait-turnarounds h3 {
+    text-align: center;
+}
+
+/* Gantt Chart */
+#live-chart {
+    display: inline-block;
+    vertical-align: top;
+    background-color: teal;
+    height: 200px;
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 1130px;
+}
+div#live-chart span.ready-bar {
+    width: 15px;
+    font-size: 17px;
+}

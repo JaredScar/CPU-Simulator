@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CPU Simulator</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="simulator">
+    <div id="data">
+        <h2>Data</h2>
+        <div class="column">
+            <span class="label">Num of Jobs</span>
+            <select id="num-of-jobs">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+            </select>
+            <button id="simulate-button" onclick="simulate();">Simulate</button>
+        </div>
+
+        <div class="column">
+            <span class="label">Algorithm</span>
+            <select id="algo">
+                <option>FCFS</option>
+                <option>SJF</option>
+                <option>STRF</option>
+                <option>RR</option>
+                <option>PNP</option>
+                <option>PP</option>
+            </select>
+            <button id="stop-button" onclick="stop();" disabled>Stop</button>
+        </div>
+
+        <div class="column">
+            <span class="label" title="Simulation Speed">Sim Speed</span>
+            <select id="sim-speed">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <button id="next-step-button" onclick="next_step();">Next Step</button>
+        </div>
+
+        <div class="column">
+            <span class="label" title="How many cores?">CPU Count</span>
+            <select id="cpu-count">
+                <option>1</option>
+                <option>2</option>
+                <option>4</option>
+                <option>6</option>
+            </select>
+            <button id="restart-button" onclick="restart();">Restart</button>
+        </div>
+
+
+
+        <div class="column-lg">
+            <button id="start-another" onclick="start_another();">Start another simulation</button>
+        </div>
+
+        <div class="column-lg">
+            <button id="finish" onclick="finish();">Finish</button>
+        </div>
+    </div>
+
+
+
+
+    <div id="job-pool">
+        <h2>Job Pool</h2>
+        <table id="job-table">
+            <tr>
+                <th>Pid</th>
+                <th>Arrival</th>
+                <th>Burst</th>
+                <th>Priority</th>
+                <th>Started</th>
+                <th>Waited</th>
+                <th>Remaining</th>
+                <th>Finished</th>
+                <th>Turn</th>
+                <th>%</th>
+            </tr>
+
+            <!--
+            <tr>
+                <td>pid</td>
+                <td>Arrival</td>
+                <td>Burst</td>
+                <td>Priority</td>
+                <td>Started</td>
+                <td>Waited</td>
+                <td>Remaining</td>
+                <td>Finished</td>
+                <td>Turn</td>
+                <td>%</td>
+            </tr>
+            -->
+        </table>
+    </div>
+
+
+
+
+    <div id="cpu">
+        <h2>CPU</h2>
+
+        <div class="cpu-col">
+            <span>Current Job</span>
+            <h3 id="current-job">JOB 4</h3>
+        </div>
+
+        <div class="cpu-col">
+            <span>Clock Timer</span>
+            <h3 id="clock-num">0</h3>
+        </div>
+
+        <div class="cpu-col">
+            <span>Utilization</span>
+            <h3>100%</h3>
+        </div>
+    </div>
+
+
+
+
+    <div id="ready-queue">
+        <h2>Ready Queue</h2>
+        <div class="ready-bars" id="ready-queue-bars">
+            <!--
+            <span class="ready-bar bar-0">0</span>
+            <span class="ready-bar bar-1">1</span>
+            -->
+        </div>
+    </div>
+
+
+
+
+    <div id="wait-turnarounds">
+        <h2>Average</h2>
+
+        <div class="col">
+            <span>Waiting</span>
+            <h3 id="wait-average">0.0</h3>
+        </div>
+
+        <div class="col">
+            <span>Turnaround</span>
+            <h3 id="turnaround-average">0.0</h3>
+        </div>
+    </div>
+
+
+
+
+    <div id="live-chart">
+        <h2>Gantt Chart</h2>
+        <!--
+        <span class="ready-bar bar-0">0</span>
+        -->
+    </div>
+</div>
+</body>
+</html>
