@@ -18,9 +18,15 @@ class CPU {
                 job.active = false;
                 this.main_handler.getReadyQueue().remove(job);
 
-                // Fetch new Job
-                job = this.main_handler.getReadyQueue().getFirstCome();
-                job.active = true;
+                //Check if there is another job
+                if(this.main_handler.getReadyQueue().getJobs().length > 0) {
+                    // Fetch new Job
+                    job = this.main_handler.getReadyQueue().getFirstCome();
+                    job.active = true;
+                } else {
+                    // Stop code, all jobs done
+                    return;
+                }
             }
             if (job.getBurstsCount() == job.getBurstsRemaining()) {
                 // We just started this job, we need to set it's start time
