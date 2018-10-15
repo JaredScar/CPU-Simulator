@@ -28,10 +28,14 @@
  */
 var handler = null;
 
-var jobCount = $('#num-of-jobs option:selected').text();
-var algo = $('#algo option:selected').text();
-var simSpeed = $('#sim-speed option:selected').text();
-var cpuCount = $('#cpu-count option:selected').text();
+var jobCount = $('#num-of-jobs');
+var algo = $('#algo');
+var simSpeed = $('#sim-speed');
+var cpuCount = $('#cpu-count');
+
+var finalCpuCount;
+var finalSimSpeed;
+var finalJobCount;
 
 var nextStepButton = $('#next-step-button');
 var stopButton = $('#stop-button');
@@ -53,7 +57,10 @@ function stop() {}
 function next_step() {
     if(this.handler == null) {
         manualInput = confirm("You would like to input the data for the jobs manually?");
-        this.handler = new Main_Handler(cpuCount, jobCount, simSpeed);
+        finalCpuCount = cpuCount.find(":selected").text();
+        finalJobCount = jobCount.find(":selected").text();
+        finalSimSpeed = simSpeed.find(":selected").text();
+        this.handler = new Main_Handler(cpuCount.find(":selected").text(), jobCount.find(":selected").text(), simSpeed.find(":selected").text());
         if(manualInput === true) {
             // They want to input the data for the Jobs themselves
             var inQueue = [];
@@ -93,15 +100,15 @@ function update_page() {
         var job = jobs[i];
         if(job.isActive()) {
             // Then this is the job that gets it's Gantt chart added to
-            liveChart.append('<span class="ready-bar bar-' + job.getPID() + '">' + job.getPID() + '</span>');
+            for(var j=0; j < parseInt(finalCpuCount); j++) {
+                liveChart.append('<span class="ready-bar bar-' + job.getPID() + '">' + job.getPID() + '</span>');
+            }
         }
     }
 }
 function update_table() {
     // Update values on Job Table:
-    console.log("ReadyQueue in update_table(): " + this.handler.getReadyQueue().getQUEUE()[0]); // TODO debug, get rid of
     for(var i = 0; i < this.handler.getReadyQueue().getQUEUE().length; i++) {
-        console.log("for loop in update_table() is running"); // TODO debug, get rid of
         var job = this.handler.getReadyQueue().getQUEUE()[i];
 
         var arrivalTime = job.getArrivalTime();
@@ -115,7 +122,6 @@ function update_table() {
         var percentDone = job.getPercentDone();
 
         var pidTD = $('#PID-' + i);
-        console.log(pidTD.length); // TODO debug, get rid of
         if(pidTD.length <= 0) {
             // Wasn't created yet, we need to insert new data
             jobTable.append('<tr><td id="PID-' + i +'">' + job.getPID() + '</td><td id="arrivalTime-' + i + '">' + arrivalTime + '</td><td id="burstsCount-' + i + '">' + burstsCount +

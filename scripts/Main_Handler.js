@@ -14,13 +14,11 @@ class Main_Handler {
         
         this.cpus = [];
         var readyQueueVar = [];
-        //TODO Only able to do 1 job currently?... Need to be able to do whatever is defined in #num-of-jobs [NEEDS FIX]
         for(var i=0; i<jobCount; i++) {
             var job = new Job(i);
             readyQueueVar.push(job);
         }
         this.readyQueue = new ReadyQueue(readyQueueVar);
-        //TODO Only able to do 1 CPU currently?... Need to do what is specified in select value [NEEDS FIX]
         for(var i=0; i<cpuCount; i++) {
             this.cpus.push(new CPU(this));
         }
