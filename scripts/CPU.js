@@ -2,28 +2,49 @@
  * Created by user on 10/12/2018.
  */
 class CPU {
-    private var readyQueue; // readyQueue in which jobs are gotten from
 
-    public CPU(readyQueue) {
-        this.readyQueue = readyQueue;
+    constructor(main_handler) {
+        this.main_handler = main_handler;
     }
 
-    public runFCFS() {
+    runFCFS() {
         // Get a job done with the First-Come First-Served algo
+        var job = this.main_handler.getReadyQueue().getFirstCome();
+        job.active = true;
+        if(job.getBurstsRemaining() === 0) {
+            // Job was finished, mark it
+            job.setCompleted(true);
+            job.active = false;
+            this.main_handler.getReadyQueue().remove(job);
+
+            // Fetch new Job
+            job = this.main_handler.getReadyQueue().getFirstCome();
+            job.active = true;
+        }
+        if(job.getBurstsCount() == job.getBurstsRemaining()) {
+            // We just started this job, we need to set it's start time
+            job.setStartTime(this.main_handler.getClock());
+        }
+
+        // Set the burstsRemaining
+        job.setBurstsRemaining((job.getBurstsRemaining()-1));
+
+        //Set % ---> ( ((burstsCount - burstsRemaining) / burstsCount) * 100)
+        job.setPercentDone( Math.ceil(((job.burstsCount - job.burstsRemaining) / job.burstsCount) * 100) );
     }
-    public runSJF() {
+    runSJF() {
         // Get a job done with the Shortest Job First algo
     }
-    public runSRTF() {
+    runSRTF() {
         // Get a job done with the Shortest Remaining Time First algo
     }
-    public runRR() {
+    runRR() {
         // Get a job done with the Round-Robin algo
     }
-    public runPNP() {
+    runPNP() {
         // Get a job done with the Priority Non-Preemptive algo
     }
-    public runPP() {
+    runPP() {
         // Get a job done with the Priority Preemptive algo
     }
 }

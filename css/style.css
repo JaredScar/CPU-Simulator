@@ -103,6 +103,7 @@ span.ready-bar {
     text-align: center;
     color: white;
     font-size: 24px;
+    border-left: 2px solid black;
 }
 span.ready-bar.bar-0 {
     background-color: red;

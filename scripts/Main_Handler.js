@@ -2,24 +2,76 @@
  * Created by user on 10/12/2018.
  */
 class Main_Handler {
-    private var ended = false;
-    private var cpus; // Array of CPU instances
-    private var schedulerAlgo; // Selected Scheduling Algorithm
-    private var clock = 0;
-    private var simSpeed; // Speed that the simulation runs at (the main clock basically)
-    public Main_Handler(cpuCount, jobCount, simSpeed) {
+    constructor(cpuCount, jobCount, simSpeed) {
+        this.ended = false;
+        this.cpus = []; // Array of CPU instances
+        this.schedulerAlgo = null; // Selected Scheduling Algorithm
+        this.clock = 0;
+        this.simSpeed = 0; // Speed that the simulation runs at (the main clock basically)
+        this.readyQueue = null;
+
+
+        
         this.cpus = [];
-        var readyQueue = new ReadyQueue();
+        var readyQueueVar = [];
+        //TODO Only able to do 1 job currently?... Need to be able to do whatever is defined in #num-of-jobs [NEEDS FIX]
         for(var i=0; i<jobCount; i++) {
-            readyQueue.add(new Job());
+            var job = new Job(i);
+            readyQueueVar.push(job);
         }
+        this.readyQueue = new ReadyQueue(readyQueueVar);
+        //TODO Only able to do 1 CPU currently?... Need to do what is specified in select value [NEEDS FIX]
         for(var i=0; i<cpuCount; i++) {
-            this.cpus.push(new CPU(readyQueue));
+            this.cpus.push(new CPU(this));
         }
+        this.simSpeed = simSpeed;
     }
 
-    public run() {
+    getReadyQueue() {
+        return this.readyQueue;
+    }
+
+    getClock() {
+        return this.clock;
+    }
+
+    setSchedulerAlgo(algo) {
+        this.algo = algo;
+    }
+
+    nextStep() {
+        // Run all the CPUs on clock tick
+        for(var i=0; i < this.cpus.length; i++) {
+            var cpu = this.cpus[i];
+            switch (this.schedulerAlgo) {
+                case "FCFS":
+                    cpu.runFCFS();
+                    break;
+                case "SJF":
+                    cpu.runSJF();
+                    break;
+                case "SRTF":
+                    cpu.runSRTF();
+                    break;
+                case "RR":
+                    cpu.runRR();
+                    break;
+                case "PNP":
+                    cpu.runPNP();
+                    break;
+                case "PP":
+                    cpu.runPP();
+                    break;
+                default:
+                    // Default is FCFS
+                    cpu.runFCFS();
+            }
+        }
+        // Clock tick:
         this.clock++;
+    }
+
+    run() {
         // Run all the CPUs on clock tick
         for(var i=0; i < cpus.length; i++) {
             var cpu = cpus[i];
@@ -47,6 +99,8 @@ class Main_Handler {
                     cpu.runFCFS();
             }
         }
+        // Clock tick
+        this.clock++;
 
         if(!ended) {
             setTimeout(this.run(), this.simSpeed);
@@ -56,5 +110,5 @@ class Main_Handler {
         }
     }
 
-    public end() {}
+    end() {}
 }
