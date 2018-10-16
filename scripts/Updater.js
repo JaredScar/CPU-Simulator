@@ -27,14 +27,26 @@ class Updater {
     }
 
     update_page() {
+        var jobs = this.handler.getReadyQueue().getQUEUE();
         // This should update the "CPU" section, "Ready Queue" section, "Average" section, and "Gantt Chart" section:
+
+        // Set up the "CPU" section:
+        // Set 'Current Job' in "CPU" section:
+        for(var i = 0; i < jobs.length; i++) {
+            var job = jobs[i];
+            if(job.isActive()) {
+                currentJob.text("JOB " + job.getPID());
+            }
+        }
+        // Set 'Clock Timer' in "CPU" section:
+        clockTimer.text(this.handler.getClock());
+
 
         // TODO We need to set up the ReadyQueue to hold the Jobs that have arrived, but can't go because a job is being done:
 
         // TODO We need to set up the average count (easy math):
 
-        // TODO We need to set up the Gantt Chart and add the job's burst if it's active:
-        var jobs = this.handler.getReadyQueue().getQUEUE();
+        // Set up the Gantt Chart and add the job's burst if it's active:
         for (var i = 0; i < jobs.length; i++) {
             var job = jobs[i];
             if (job.isActive()) {
