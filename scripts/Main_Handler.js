@@ -19,7 +19,7 @@ class Main_Handler {
             readyQueueVar.push(job);
         }
         this.readyQueue = new ReadyQueue(readyQueueVar);
-        for(var i=0; i<cpuCount; i++) {
+        for(var j=0; j<cpuCount; j++) {
             this.cpus.push(new CPU(this));
         }
         this.simSpeed = simSpeed;
@@ -35,6 +35,10 @@ class Main_Handler {
 
     setSchedulerAlgo(algo) {
         this.algo = algo;
+    }
+
+    setUpdater(updater) {
+        this.updater = updater;
     }
 
     nextStep() {
@@ -69,10 +73,10 @@ class Main_Handler {
         this.clock++;
     }
 
-    run() {
+    async run() {
         // Run all the CPUs on clock tick
-        for(var i=0; i < cpus.length; i++) {
-            var cpu = cpus[i];
+        for (var i = 0; i < this.cpus.length; i++) {
+            var cpu = this.cpus[i];
             switch (this.schedulerAlgo) {
                 case "FCFS":
                     cpu.runFCFS();
@@ -97,16 +101,30 @@ class Main_Handler {
                     cpu.runFCFS();
             }
         }
+
         // Clock tick
         this.clock++;
 
-        if(!ended) {
-            setTimeout(this.run(), this.simSpeed);
+        // Update the actual browser (Jobs Table, "CPU" section, "Ready Queue" section, "Average" section, and Gantt Chart)
+        this.updater.update_table();
+        this.updater.update_page();
+
+        if (!this.ended) {
+            await this.sleep((1000 * this.simSpeed));
             this.run();
         } else {
             this.end();
         }
     }
 
-    end() {}
+
+    sleep(ms) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(resolve, ms);
+    });
+}
+
+    end() {
+        this.ended = true;
+    }
 }

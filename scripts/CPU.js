@@ -25,6 +25,7 @@ class CPU {
                     job.active = true;
                 } else {
                     // Stop code, all jobs done
+                    this.main_handler.ended = true;
                     return;
                 }
             }
