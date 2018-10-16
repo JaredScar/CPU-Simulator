@@ -5,6 +5,7 @@ class ReadyQueue {
     constructor(jobs) {
         this.queue = jobs;
         this.QUEUE = jobs; // This never gets it's Jobs removed
+        this.waitingQueue = []; // The Queue which holds the Jobs on the Ready Queue
     }
 
     getQUEUE() {
@@ -32,6 +33,31 @@ class ReadyQueue {
     clear() {
         this.queue = null;
     }
+
+    addWaitingJob(job) {
+        this.waitingQueue.push(job);
+    }
+
+    getWaitingQueue() {
+        return this.waitingQueue;
+    }
+
+    removeWaitingJob(job) {
+        this.waitingQueue = this.waitingQueue.filter(function(item) {
+            return item !== job;
+        });
+    }
+
+    update(clockTime) {
+        for(var i=0; i < this.queue.length; i++) {
+            var job = this.queue[i];
+            if(job.getArrivalTime() === clockTime) {
+                this.addWaitingJob(job);
+            }
+        }
+    }
+
+    // TODO We may need another queue in which will be the main queue and adds the jobs as they arrive with their "arrivalTime":
 
     // Functions that help for the scheduling algos
     /**

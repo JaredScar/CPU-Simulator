@@ -54,6 +54,9 @@ function simulate() {
     // We want to enable the stop button since the simulation will be active:
     stopButton.removeAttr('disabled');
 
+    if(this.handler !=null)
+        this.handler.ended = false;
+
     if(this.handler == null) {
         var manualInput = confirm("You would like to input the data for the jobs manually?");
         finalCpuCount = cpuCount.find(":selected").text();
@@ -80,8 +83,18 @@ function simulate() {
         this.handler.run();
     }
 }
-function stop() {}
+function stop() {
+    this.handler.ended = true;
+    stopButton.prop('disabled', true);
+    nextStepButton.removeAttr('disabled');
+}
 function next_step() {
+    if(this.updater != null) {
+        // Now we update the table with the information:
+        this.updater.update_table();
+        // We update the page now as well:
+        this.updater.update_page();
+    }
     if(this.handler == null) {
         var manualInput = confirm("You would like to input the data for the jobs manually?");
         finalCpuCount = cpuCount.find(":selected").text();
@@ -89,6 +102,10 @@ function next_step() {
         finalSimSpeed = simSpeed.find(":selected").text();
         this.handler = new Main_Handler(cpuCount.find(":selected").text(), jobCount.find(":selected").text(), simSpeed.find(":selected").text());
         this.updater = new Updater(this.handler);
+        // Now we update the table with the information:
+        this.updater.update_table();
+        // We update the page now as well:
+        this.updater.update_page();
         this.handler.setUpdater(this.updater);
         if(manualInput === true) {
             // They want to input the data for the Jobs themselves
@@ -107,11 +124,18 @@ function next_step() {
     } else {
         this.handler.nextStep();
     }
-    // Now we update the table with the information:
-    this.updater.update_table();
-    // We update the page now as well:
-    this.updater.update_page();
 }
-function restart() {}
-function start_another() {}
-function finish() {}
+function restart() {
+    this.handler = null;
+    this.updater = null;
+    window.location.reload();
+}
+function start_another() {
+    this.handler = null;
+    this.updater = null;
+    window.location.reload();
+    simulate();
+}
+function finish() {
+    this.handler.runToComplete();
+}

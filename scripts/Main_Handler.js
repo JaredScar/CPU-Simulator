@@ -74,6 +74,10 @@ class Main_Handler {
     }
 
     async run() {
+        // Update the actual browser (Jobs Table, "CPU" section, "Ready Queue" section, "Average" section, and Gantt Chart)
+        this.updater.update_table();
+        this.updater.update_page();
+
         // Run all the CPUs on clock tick
         for (var i = 0; i < this.cpus.length; i++) {
             var cpu = this.cpus[i];
@@ -105,10 +109,6 @@ class Main_Handler {
         // Clock tick
         this.clock++;
 
-        // Update the actual browser (Jobs Table, "CPU" section, "Ready Queue" section, "Average" section, and Gantt Chart)
-        this.updater.update_table();
-        this.updater.update_page();
-
         if (!this.ended) {
             await this.sleep((1000 * this.simSpeed));
             this.run();
@@ -123,6 +123,50 @@ class Main_Handler {
         setTimeout(resolve, ms);
     });
 }
+
+    // This is used for the "Finish" button to auto-complete it
+    runToComplete() {
+        // Update the actual browser (Jobs Table, "CPU" section, "Ready Queue" section, "Average" section, and Gantt Chart)
+        this.updater.update_table();
+        this.updater.update_page();
+
+        // Run all the CPUs on clock tick
+        for (var i = 0; i < this.cpus.length; i++) {
+            var cpu = this.cpus[i];
+            switch (this.schedulerAlgo) {
+                case "FCFS":
+                    cpu.runFCFS();
+                    break;
+                case "SJF":
+                    cpu.runSJF();
+                    break;
+                case "SRTF":
+                    cpu.runSRTF();
+                    break;
+                case "RR":
+                    cpu.runRR();
+                    break;
+                case "PNP":
+                    cpu.runPNP();
+                    break;
+                case "PP":
+                    cpu.runPP();
+                    break;
+                default:
+                    // Default is FCFS
+                    cpu.runFCFS();
+            }
+        }
+
+        // Clock tick
+        this.clock++;
+
+        if (!this.ended) {
+            this.runToComplete();
+        } else {
+            this.end();
+        }
+    }
 
     end() {
         this.ended = true;

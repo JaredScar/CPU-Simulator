@@ -16,8 +16,9 @@ var stopButton = $('#stop-button');
 var jobTable = $('#job-table');
 var currentJob = $('#current-job');
 var clockTimer = $('#clock-num');
+var utilization = $('#utilization');
 var readyQueue = $('#ready-queue-bars');
-var waitAverage = $('#wait-average');
+var waitingAverage = $('#wait-average');
 var turnaroundAverage = $('#turnaround-average');
 var liveChart = $('#live-chart');
 class Updater {
@@ -32,19 +33,63 @@ class Updater {
 
         // Set up the "CPU" section:
         // Set 'Current Job' in "CPU" section:
+        var jobIsActive = false;
         for(var i = 0; i < jobs.length; i++) {
             var job = jobs[i];
             if(job.isActive()) {
+                jobIsActive = true;
                 currentJob.text("JOB " + job.getPID());
             }
+        }
+        if(!jobIsActive) {
+            currentJob.text("NONE");
+            utilization.text("0%");
+        } else {
+            utilization.text("100%");
         }
         // Set 'Clock Timer' in "CPU" section:
         clockTimer.text(this.handler.getClock());
 
 
-        // TODO We need to set up the ReadyQueue to hold the Jobs that have arrived, but can't go because a job is being done:
+        // Set up the ReadyQueue to hold the Jobs that have arrived, but can't go because a job is being done:
+        var waitQueue = this.handler.getReadyQueue().getWaitingQueue();
+        var activeJob = null;
+        for(var i = 0; i < waitQueue.length; i++) {
+            var job = waitQueue[i];
+            var jobSpanID = $('#waitingQueue-' + job.getPID()); // "Ready Queue" section span element
+            if(job.isActive()) {
+                activeJob = job;
+            } else {
+                // We want to increase their wait time here too:
+                job.setWaitTime((job.getWaitTime() + 1));
+                // We want to increase their turn time here too:
+                job.setTurnAroundTime((job.getTurnAroundTime() + 1));
+            }
+            if(jobSpanID.length <= 0) {
+                // It doesn't exist, we need to create it
+                readyQueue.append('<span class="ready-bar bar-' + job.getPID() + '" id="waitingQueue-' + job.getPID() + '">' + job.getPID() + '</span>');
+            }
+        }
+        // Remove the job that has been started (if one has been):
+        if(activeJob != null) {
+            this.handler.getReadyQueue().removeWaitingJob(activeJob);
+            // Remove it's SpanID too:
+            var activeJobSpanID = $('#waitingQueue-' + activeJob.getPID());
+            activeJobSpanID.remove();
+        }
 
-        // TODO We need to set up the average count (easy math):
+        // Set up the average count (easy math):
+        var waitSum = 0;
+        var turnSum = 0;
+        for(var i = 0; i < jobs.length; i++) {
+            var job = jobs[i];
+            waitSum = job.getWaitTime() + waitSum;
+            turnSum = job.getTurnAroundTime() + turnSum;
+        }
+        var waitAverage = (waitSum / jobs.length);
+        var turnAverage = (turnSum / jobs.length);
+        waitingAverage.text(waitAverage);
+        turnaroundAverage.text(turnAverage);
 
         // Set up the Gantt Chart and add the job's burst if it's active:
         for (var i = 0; i < jobs.length; i++) {
