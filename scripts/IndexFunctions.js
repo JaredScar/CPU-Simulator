@@ -53,6 +53,8 @@ function simulate() {
     nextStepButton.prop('disabled', true);
     // We want to enable the stop button since the simulation will be active:
     stopButton.removeAttr('disabled');
+    // We want to disable simulate button since it's already simulating
+    simulateButton.prop('disabled', true);
 
     if(this.handler !=null)
         this.handler.ended = false;
@@ -68,14 +70,18 @@ function simulate() {
         this.handler.setSchedulerAlgo(algo.find(":selected").text());
         if(manualInput === true) {
             // They want to input the data for the Jobs themselves
-            var inQueue = [];
-            for(var job in this.handler.getReadyQueue()) {
+            var jobs = this.handler.getReadyQueue().getJobs();
+            var newQueue = [];
+            for(var i=0; i < jobs.length; i++) {
+                var job = jobs[i];
                 job.setArrivalTime(parseInt(prompt("When does the process arrive?")));
                 job.setBurstsCount(parseInt(prompt("How many bursts does the process have?")));
+                job.setBurstsRemaining(job.getBurstsCount());
                 job.setPriority(parseInt(prompt("What is the priority of this process?")));
-                inQueue.push(job);
+                newQueue.push(job);
             }
-            this.handler.getReadyQueue().setQueue(inQueue);
+            this.handler.getReadyQueue().setQueue(newQueue);
+            this.handler.run();
         } else {
             // They want random data
             this.handler.run();
@@ -90,12 +96,6 @@ function stop() {
     nextStepButton.removeAttr('disabled');
 }
 function next_step() {
-    if(this.updater != null) {
-        // Now we update the table with the information:
-        this.updater.update_table();
-        // We update the page now as well:
-        this.updater.update_page();
-    }
     if(this.handler == null) {
         var manualInput = confirm("You would like to input the data for the jobs manually?");
         finalCpuCount = cpuCount.find(":selected").text();
@@ -107,43 +107,43 @@ function next_step() {
         this.handler.setSchedulerAlgo(algo.find(":selected").text());
         if(manualInput === true) {
             // They want to input the data for the Jobs themselves
-            var inQueue = [];
             var jobs = this.handler.getReadyQueue().getJobs();
+            var newQueue = [];
             for(var i=0; i < jobs.length; i++) {
                 var job = jobs[i];
                 job.setArrivalTime(parseInt(prompt("When does the process arrive?")));
                 job.setBurstsCount(parseInt(prompt("How many bursts does the process have?")));
+                job.setBurstsRemaining(job.getBurstsCount());
                 job.setPriority(parseInt(prompt("What is the priority of this process?")));
+                newQueue.push(job);
             }
-            this.handler.QUEUE = jobs;
-
-            // Now we update the table with the information:
-            this.updater.update_table();
-            // We update the page now as well:
-            this.updater.update_page();
+            this.handler.getReadyQueue().setQueue(newQueue);
         } else {
             // They want random data
             this.handler.nextStep();
-
-            // Now we update the table with the information:
-            this.updater.update_table();
-            // We update the page now as well:
-            this.updater.update_page();
         }
     } else {
         this.handler.nextStep();
     }
+    // Now we update the table with the information:
+    this.updater.update_table();
+    // We update the page now as well:
+    this.updater.update_page();
 }
 function restart() {
-    this.handler = null;
-    this.updater = null;
     window.location.reload();
 }
 function start_another() {
     this.handler = null;
     this.updater = null;
+    sessionStorage.setItem("Start_Another", true);
     window.location.reload();
-    simulate();
+}
+function started_another() {
+    if(sessionStorage.getItem("Start_Another")) {
+        simulate();
+        sessionStorage.clear();
+    }
 }
 function finish() {
     this.handler.runToComplete();

@@ -43,6 +43,8 @@ class Main_Handler {
     }
 
     nextStep() {
+        // Clock tick
+        this.clock++;
         // Run all the CPUs on clock tick
         for(var i=0; i < this.cpus.length; i++) {
             var cpu = this.cpus[i];
@@ -70,14 +72,11 @@ class Main_Handler {
                     cpu.runFCFS();
             }
         }
-        // Clock tick:
-        this.clock++;
     }
 
     async run() {
-        // Update the actual browser (Jobs Table, "CPU" section, "Ready Queue" section, "Average" section, and Gantt Chart)
-        this.updater.update_table();
-        this.updater.update_page();
+        // Clock tick
+        this.clock++;
 
         // Run all the CPUs on clock tick
         for (var i = 0; i < this.cpus.length; i++) {
@@ -107,8 +106,9 @@ class Main_Handler {
             }
         }
 
-        // Clock tick
-        this.clock++;
+        // Update the actual browser (Jobs Table, "CPU" section, "Ready Queue" section, "Average" section, and Gantt Chart)
+        this.updater.update_table();
+        this.updater.update_page();
 
         if (!this.ended) {
             await this.sleep((1000 * this.simSpeed));

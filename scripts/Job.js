@@ -19,6 +19,16 @@ class Job {
         // ^ All above data should be randomly generated (besides turnAroundTime, waitTime, startTime, completed, percentageDone) ^
     }
 
+    restart() {
+        this.burstsRemaining = this.burstsCount;
+        this.percentageDone = 0;
+        this.active = false;
+        this.completed = false;
+        this.startTime = 0;
+        this.turnAroundTime = 0;
+        this.waitTime = 0;
+    }
+
     // Getters
     isActive() {
         return this.active;

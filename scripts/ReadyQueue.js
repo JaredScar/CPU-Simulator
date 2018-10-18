@@ -18,6 +18,7 @@ class ReadyQueue {
 
     setQueue(queue) {
         this.queue = queue;
+        this.QUEUE = queue;
     }
 
     add(job) {
