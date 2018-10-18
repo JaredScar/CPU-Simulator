@@ -65,6 +65,7 @@ function simulate() {
         this.handler = new Main_Handler(cpuCount.find(":selected").text(), jobCount.find(":selected").text(), simSpeed.find(":selected").text());
         this.updater = new Updater(this.handler);
         this.handler.setUpdater(this.updater);
+        this.handler.setSchedulerAlgo(algo.find(":selected").text());
         if(manualInput === true) {
             // They want to input the data for the Jobs themselves
             var inQueue = [];
@@ -102,24 +103,32 @@ function next_step() {
         finalSimSpeed = simSpeed.find(":selected").text();
         this.handler = new Main_Handler(cpuCount.find(":selected").text(), jobCount.find(":selected").text(), simSpeed.find(":selected").text());
         this.updater = new Updater(this.handler);
-        // Now we update the table with the information:
-        this.updater.update_table();
-        // We update the page now as well:
-        this.updater.update_page();
         this.handler.setUpdater(this.updater);
+        this.handler.setSchedulerAlgo(algo.find(":selected").text());
         if(manualInput === true) {
             // They want to input the data for the Jobs themselves
             var inQueue = [];
-            for(var job in this.handler.getReadyQueue()) {
+            var jobs = this.handler.getReadyQueue().getJobs();
+            for(var i=0; i < jobs.length; i++) {
+                var job = jobs[i];
                 job.setArrivalTime(parseInt(prompt("When does the process arrive?")));
                 job.setBurstsCount(parseInt(prompt("How many bursts does the process have?")));
                 job.setPriority(parseInt(prompt("What is the priority of this process?")));
-                inQueue.push(job);
             }
-            this.handler.getReadyQueue().setQueue(inQueue);
+            this.handler.QUEUE = jobs;
+
+            // Now we update the table with the information:
+            this.updater.update_table();
+            // We update the page now as well:
+            this.updater.update_page();
         } else {
             // They want random data
             this.handler.nextStep();
+
+            // Now we update the table with the information:
+            this.updater.update_table();
+            // We update the page now as well:
+            this.updater.update_page();
         }
     } else {
         this.handler.nextStep();

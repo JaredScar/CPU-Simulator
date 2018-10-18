@@ -39,6 +39,7 @@ class Main_Handler {
 
     setUpdater(updater) {
         this.updater = updater;
+        this.updater.disable_inputs();
     }
 
     nextStep() {

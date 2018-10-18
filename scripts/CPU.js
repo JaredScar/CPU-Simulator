@@ -30,6 +30,7 @@ class CPU {
                         job.active = true;
                     } else {
                         // Stop code, all jobs done
+                        updater.disable_buttons();
                         this.main_handler.end();
                         return;
                     }

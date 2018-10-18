@@ -10,6 +10,7 @@ var finalCpuCount;
 var finalSimSpeed;
 var finalJobCount;
 
+var simulateButton = $('#simulate-button');
 var nextStepButton = $('#next-step-button');
 var stopButton = $('#stop-button');
 
@@ -25,6 +26,21 @@ class Updater {
 
     constructor(handler) {
         this.handler = handler;
+    }
+
+    // This is called when all jobs are complete and we need to stop the "Simulate" and "Next Step" button from being pressed
+    disable_buttons() {
+        simulateButton.attr('disabled', true);
+        nextStepButton.attr('disabled', true);
+        stopButton.attr('disabled', true);
+    }
+
+    // Disable them from changing the inputs (inputs are already set)
+    disable_inputs() {
+        algo.attr('disabled', true);
+        simSpeed.attr('disabled', true);
+        cpuCount.attr('disabled', true);
+        jobCount.attr('disabled', true);
     }
 
     update_page() {
