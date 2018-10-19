@@ -3,7 +3,7 @@
  */
 var jobCount = $('#num-of-jobs');
 var algo = $('#algo');
-var simSpeed = $('#sim-speed');
+var quantum = $('#quantum');
 var cpuCount = $('#cpu-count');
 
 var finalCpuCount;
@@ -38,7 +38,7 @@ class Updater {
     // Disable them from changing the inputs (inputs are already set)
     disable_inputs() {
         algo.attr('disabled', true);
-        simSpeed.attr('disabled', true);
+        quantum.attr('disabled', true);
         cpuCount.attr('disabled', true);
         jobCount.attr('disabled', true);
     }

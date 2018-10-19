@@ -31,11 +31,11 @@ var updater = null;
 
 var jobCount = $('#num-of-jobs');
 var algo = $('#algo');
-var simSpeed = $('#sim-speed');
+var quantum = $('#quantum');
 var cpuCount = $('#cpu-count');
 
 var finalCpuCount;
-var finalSimSpeed;
+var finalQuantum;
 var finalJobCount;
 
 var nextStepButton = $('#next-step-button');
@@ -63,8 +63,8 @@ function simulate() {
         var manualInput = confirm("You would like to input the data for the jobs manually?");
         finalCpuCount = cpuCount.find(":selected").text();
         finalJobCount = jobCount.find(":selected").text();
-        finalSimSpeed = simSpeed.find(":selected").text();
-        this.handler = new Main_Handler(cpuCount.find(":selected").text(), jobCount.find(":selected").text(), simSpeed.find(":selected").text());
+        finalSimSpeed = quantum.find(":selected").text();
+        this.handler = new Main_Handler(cpuCount.find(":selected").text(), jobCount.find(":selected").text(), quantum.find(":selected").text());
         this.updater = new Updater(this.handler);
         this.handler.setUpdater(this.updater);
         this.handler.setSchedulerAlgo(algo.find(":selected").text());
@@ -100,8 +100,8 @@ function next_step() {
         var manualInput = confirm("You would like to input the data for the jobs manually?");
         finalCpuCount = cpuCount.find(":selected").text();
         finalJobCount = jobCount.find(":selected").text();
-        finalSimSpeed = simSpeed.find(":selected").text();
-        this.handler = new Main_Handler(cpuCount.find(":selected").text(), jobCount.find(":selected").text(), simSpeed.find(":selected").text());
+        finalSimSpeed = quantum.find(":selected").text();
+        this.handler = new Main_Handler(cpuCount.find(":selected").text(), jobCount.find(":selected").text(), quantum.find(":selected").text());
         this.updater = new Updater(this.handler);
         this.handler.setUpdater(this.updater);
         this.handler.setSchedulerAlgo(algo.find(":selected").text());

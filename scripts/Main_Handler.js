@@ -2,12 +2,12 @@
  * Created by user on 10/12/2018.
  */
 class Main_Handler {
-    constructor(cpuCount, jobCount, simSpeed) {
+    constructor(cpuCount, jobCount, quantum) {
         this.ended = false;
         this.cpus = []; // Array of CPU instances
         this.schedulerAlgo = null; // Selected Scheduling Algorithm
         this.clock = 0;
-        this.simSpeed = 0; // Speed that the simulation runs at (the main clock basically)
+        this.quantum = 0; // Quantum field (for Round-Robin)
         this.readyQueue = null;
 
 
@@ -22,11 +22,15 @@ class Main_Handler {
         for(var j=0; j<cpuCount; j++) {
             this.cpus.push(new CPU(this));
         }
-        this.simSpeed = simSpeed;
+        this.quantum = quantum;
     }
 
     getReadyQueue() {
         return this.readyQueue;
+    }
+
+    getQuantum() {
+        return this.quantum;
     }
 
     getClock() {
@@ -111,7 +115,7 @@ class Main_Handler {
         this.updater.update_page();
 
         if (!this.ended) {
-            await this.sleep((1000 * this.simSpeed));
+            await this.sleep(1000);
             this.run();
         } else {
             this.end();
@@ -164,8 +168,6 @@ class Main_Handler {
 
         if (!this.ended) {
             this.runToComplete();
-        } else {
-            this.end();
         }
     }
 
