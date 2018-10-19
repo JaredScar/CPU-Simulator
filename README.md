@@ -9,7 +9,7 @@ https://thewolfbadger.github.io/CPU-Simulator/
 ## Non-Preemptive Priority
 "Non-Preemptive Priority" works just like "First Come First Served" algorithm except that the jobs in the ready queue are ordered by priority.
 ## Preemptive Priority
-"Preemptive Priority" works like the "Shortest Remaining Time First" algorithm except that the jobs in the ready queue are ordered by priority
+"Preemptive Priority" works like the "Shortest Remaining Time First" algorithm except that the jobs in the ready queue are ordered by priority. A job which is currently being processed by the CPU can be replaced for a job with a higher priority.
 ## Round Robin
 The "Round Robin" algorithm lets every job be processed by the CPU for a certain time "quantum time" then replaces it with the next job in the ready queue. When a job finishes it's quantum time it gets sent to the end of the ready queue.
 ## Shortest Job First
