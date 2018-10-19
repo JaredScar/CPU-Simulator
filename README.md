@@ -3,7 +3,7 @@ CPU-Simulator was a program designed to show how the CPU works through jobs usin
 scheduling algorithms available. The program was made for Sister Jane's COM 310 Operating Systems assignment #1.
 # Site
 https://thewolfbadger.github.io/CPU-Simulator/
-# Algorithms
+# Algorithms Included:
 ## First Come First Served
 "First Come First served" CPU scheduling algorithm works like its name the first the job arrive to the ready queue the first it will be processed by the CPU.
 ## Non-Preemptive Priority
