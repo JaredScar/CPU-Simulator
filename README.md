@@ -14,6 +14,7 @@ https://thewolfbadger.github.io/CPU-Simulator/
 The "Round Robin" algorithm lets every job be processed by the CPU for a certain time "quantum time" then replaces it with the next job in the ready queue. When a job finishes it's quantum time it gets sent to the end of the ready queue.
 ## Shortest Job First
 The "Shortest Job First" algorithm is the same as "First Come First Served" except that the ready queue is reordered by shortest burst time job every time a new job arrives. "Shortest Job First" is a non-preemptive algorithm. 
+
 \[Impossible to implement in interactive systems where required CPU time is not known]
 ## Shortest Remaining Time First
 "Shortest time remaining first" is same as "shortest job first" except it orders the jobs in the ready queue by the shortest remaining time including the job that is getting processed by the CPU. A job in the ready queue will replace the job which is being currently processed by the CPU if it has a shorter remaining time. "Shortest Time Remaining First" is a preemptive algorithm.
