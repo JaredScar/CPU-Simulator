@@ -128,14 +128,15 @@ class ReadyQueue {
     getRR(currentClockTick, maxQuantums) {
         var jobFinal = this.getFirstCome();
         var quantCount = jobFinal.getQuantCount();
-        console.log("FirstCome from RR is: Job" + jobFinal.getPID()); // TODO debug, get rid of
         for(var i=0; i < this.queue.length; i++) {
             var job = this.queue[i];
             if(job.getArrivalTime() <= currentClockTick) {
                 if((jobFinal.getQuantCount() % maxQuantums) == 0) {
                     if (jobFinal.getTimesActive() > job.getTimesActive()) {
-                        jobFinal = job;
-                        quantCount = job.getQuantCount();
+                        if(this.waitingQueue.length > 0 && this.waitingQueue[0].getPID() === job.getPID()) {
+                            jobFinal = job;
+                            quantCount = job.getQuantCount();
+                        }
                     }
                 }
             }
