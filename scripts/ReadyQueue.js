@@ -119,7 +119,11 @@ class ReadyQueue {
         return jobFinal;
     }
     /**
+     * Get the next Round Robin to be done
      *
+     * @param currentClockTick
+     * @param maxQuantums
+     * @returns Job
      */
     getRR(currentClockTick, maxQuantums) {
         var jobFinal = this.getFirstCome();
