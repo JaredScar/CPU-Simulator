@@ -17,4 +17,4 @@ The "Shortest Job First" algorithm is the same as "First Come First Served" exce
 
 \[Impossible to implement in interactive systems where required CPU time is not known]
 ## Shortest Remaining Time First
-"Shortest time remaining first" is same as "shortest job first" except it orders the jobs in the ready queue by the shortest remaining time including the job that is getting processed by the CPU. A job in the ready queue will replace the job which is being currently processed by the CPU if it has a shorter remaining time. "Shortest Time Remaining First" is a preemptive algorithm.
+"Shortest Time Remaining First" is the same as "Shortest Job First" except it orders the jobs in the ready queue by the shortest remaining time including the job that is getting processed by the CPU. A job in the ready queue will replace the job which is being currently processed by the CPU if it has a shorter remaining time. "Shortest Time Remaining First" is a preemptive algorithm.

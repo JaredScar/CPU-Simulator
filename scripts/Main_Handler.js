@@ -9,6 +9,7 @@ class Main_Handler {
         this.clock = 0;
         this.quantum = 0; // Quantum field (for Round-Robin)
         this.readyQueue = null;
+        this.autoComplete = false;
 
 
         
@@ -23,6 +24,10 @@ class Main_Handler {
             this.cpus.push(new CPU(this));
         }
         this.quantum = quantum;
+    }
+
+    setAutoComplete(autoComplete) {
+        this.autoComplete = autoComplete;
     }
 
     getReadyQueue() {
@@ -114,7 +119,7 @@ class Main_Handler {
         this.updater.update_table();
         this.updater.update_page();
 
-        if (!this.ended) {
+        if ((!this.ended) && !(this.autoComplete)) {
             await this.sleep(1000);
             this.run();
         } else {

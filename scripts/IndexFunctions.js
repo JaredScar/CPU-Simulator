@@ -94,6 +94,7 @@ function stop() {
     this.handler.ended = true;
     stopButton.prop('disabled', true);
     nextStepButton.removeAttr('disabled');
+    simulateButton.removeAttr('disabled');
 }
 function next_step() {
     if(this.handler == null) {
@@ -146,5 +147,6 @@ function started_another() {
     }
 }
 function finish() {
+    this.handler.setAutoComplete(true);
     this.handler.runToComplete();
 }

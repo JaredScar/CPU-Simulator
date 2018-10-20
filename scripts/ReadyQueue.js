@@ -97,6 +97,48 @@ class ReadyQueue {
         }
         return jobFinal;
     }
+    /**
+     * Get the shortest job in the waiting queue and order them shortest to highest (SJF) - Non-Preemptive
+     * Get the shortest job in waiting queue and replace job in CPU if it has shorter time than CPU's job (STRF) - Preemptive
+     *
+     * @param currentClockTick
+     * @returns Job
+     */
+    getShortestJobFirst(currentClockTick) {
+        var jobFinal = this.getFirstCome();
+        var shortestJob = jobFinal.getBurstsRemaining();
+        for(var i=0; i < this.queue.length; i++) {
+            var job = this.queue[i];
+            if(job.getArrivalTime() <= currentClockTick) {
+                if(job.getBurstsRemaining() < shortestJob) {
+                    jobFinal = job;
+                    shortestJob = job.getBurstsRemaining();
+                }
+            }
+        }
+        return jobFinal;
+    }
+    /**
+     *
+     */
+    getRR(currentClockTick, maxQuantums) {
+        var jobFinal = this.getFirstCome();
+        var quantCount = jobFinal.getQuantCount();
+        for(var i=0; i < this.queue.length; i++) {
+            var job = this.queue[i];
+            if(job.getArrivalTime() <= currentClockTick) {
+                if(jobFinal.getQuantCount() >= maxQuantums) {
+                    if(jobFinal.getTimesActive() > job.getTimesActive()) {
+                        jobFinal = job;
+                        quantCount = job.getQuantCount();
+                    }
+                }
+            }
+        }
+        return jobFinal;
+    }
+
+
 
     // Sorters
     /**
@@ -107,6 +149,19 @@ class ReadyQueue {
             if(jobA.getPriorityLevel() < jobB.getPriorityLevel())
                 return -1;
             if(jobA.getPriorityLevel() > jobB.getPriorityLevel())
+                return 1;
+            return 0;
+        });
+    }
+
+    /**
+     * Update waitingQueue based on Shortest Job First & Shortest Time Remaining First
+     */
+    sortShortest() {
+        this.waitingQueue = this.waitingQueue.sort(function(jobA, jobB) {
+            if(jobA.getBurstsRemaining() < jobB.getBurstsRemaining)
+                return -1;
+            if(jobA.getBurstsRemaining() > jobB.getBurstsRemaining())
                 return 1;
             return 0;
         });
