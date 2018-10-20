@@ -241,10 +241,8 @@ class CPU {
             // Make sure the clock is or has passed the ArrivalTime of the job:
             if (job.getArrivalTime() <= this.main_handler.getClock()) {
                 job.active = true;
-                console.log("Job " + job.getPID() + " burstsRemaining: " + job.getBurstsRemaining()); // TODO debug, get rid of
                 // Does it have no more bursts remaining for it?:
                 if (job.getBurstsRemaining() === 0) {
-                    console.log("Job " + job.getPID() + " job.getBurstsRemaining() === 0 runs: " + job.getBurstsRemaining()); // TODO debug, get rid of
                     // Job was finished, mark it
                     job.setCompleted(true);
                     job.active = false;
