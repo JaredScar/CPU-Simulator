@@ -16,6 +16,7 @@ class Job {
         this.completed = false; // Is the Job completed?
         this.percentageDone = 0; // Percent of the program being completed ((burstCount / burstsRemaining) * 100)
         this.active = false;
+        this.quantCount = 0;
         // ^ All above data should be randomly generated (besides turnAroundTime, waitTime, startTime, completed, percentageDone) ^
     }
 
@@ -27,11 +28,20 @@ class Job {
         this.startTime = 0;
         this.turnAroundTime = 0;
         this.waitTime = 0;
+        this.quantCount = 0;
     }
 
     // Getters
     isActive() {
         return this.active;
+    }
+
+    getQuantCount() {
+        return this.quantCount;
+    }
+
+    setQuantCount(quantCount) {
+        this.quantCount = quantCount;
     }
 
     getBurstsCountDone() {

@@ -4,7 +4,7 @@
 class ReadyQueue {
     constructor(jobs) {
         this.queue = jobs;
-        this.QUEUE = jobs; // This never gets it's Jobs removed
+        this.QUEUE = jobs.slice(0); // This never gets it's Jobs removed
         this.waitingQueue = []; // The Queue which holds the Jobs on the Ready Queue
     }
 
@@ -58,8 +58,6 @@ class ReadyQueue {
         }
     }
 
-    // TODO We may need another queue in which will be the main queue and adds the jobs as they arrive with their "arrivalTime":
-
     // Functions that help for the scheduling algos
     /**
      * Get the first arrived Job that is in the queue (FCFS)
@@ -74,13 +72,43 @@ class ReadyQueue {
                 lowestTime = job.getArrivalTime();
                 jobFinal = job;
             }
-            if(lowestTime == job.getArrivalTime()) {
-                if(jobFinal.getBurstsCount() < job.getBurstsCount) {
-                    lowestTime = job.getArrivalTime();
+        }
+        return jobFinal;
+    }
+
+    /**
+     * Get the highest priority job in the waiting queue and order them highest to lowest (PNP)
+     * Non-Preemptive & Preemptive use this function
+     *
+     * @param currentClockTick
+     * @returns Job
+     */
+    getPriorityFirst(currentClockTick) {
+        var jobFinal = this.getFirstCome();
+        var highestPriority = jobFinal.getPriorityLevel();
+        for(var i=0; i < this.queue.length; i++) {
+            var job = this.queue[i];
+            if(job.getArrivalTime() <= currentClockTick) {
+                if(job.getPriorityLevel() < highestPriority) {
                     jobFinal = job;
+                    highestPriority = job.getPriorityLevel();
                 }
             }
         }
         return jobFinal;
+    }
+
+    // Sorters
+    /**
+     * Update waitingQueue based on Priority Non-Preemptive & Preemptive
+     */
+    sortPriority() {
+        this.waitingQueue = this.waitingQueue.sort(function(jobA, jobB) {
+            if(jobA.getPriorityLevel() < jobB.getPriorityLevel())
+                return -1;
+            if(jobA.getPriorityLevel() > jobB.getPriorityLevel())
+                return 1;
+            return 0;
+        });
     }
 }

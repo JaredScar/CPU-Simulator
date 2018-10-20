@@ -38,7 +38,7 @@ class Main_Handler {
     }
 
     setSchedulerAlgo(algo) {
-        this.algo = algo;
+        this.schedulerAlgo = algo;
     }
 
     setUpdater(updater) {

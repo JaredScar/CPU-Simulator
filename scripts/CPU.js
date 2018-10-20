@@ -5,6 +5,7 @@ class CPU {
 
     constructor(main_handler) {
         this.main_handler = main_handler;
+        this.currentJob = null;
     }
 
     runFCFS() {
@@ -65,6 +66,62 @@ class CPU {
     }
     runPNP() {
         // Get a job done with the Priority Non-Preemptive algo
+
+        // Does the ReadyQueue have jobs in it?
+        if(this.main_handler.getReadyQueue().getJobs().length > 0) {
+            var job;
+            if(this.currentJob === null) {
+                job = this.main_handler.getReadyQueue().getPriorityFirst(this.main_handler.getClock());
+                this.currentJob = job;
+            } else {
+                job = this.currentJob;
+            }
+            // Make sure the clock is or has passed the ArrivalTime of the job:
+            if (job.getArrivalTime() <= this.main_handler.getClock()) {
+                job.active = true;
+                // Does it have no more bursts remaining for it?:
+                if (job.getBurstsRemaining() === 0) {
+                    // Job was finished, mark it
+                    job.setCompleted(true);
+                    job.active = false;
+                    this.main_handler.getReadyQueue().remove(job);
+
+                    this.currentJob = null;
+
+                    //Check if there is another job
+                    if (this.main_handler.getReadyQueue().getJobs().length > 0) {
+                        // Fetch new Job
+                        job = this.main_handler.getReadyQueue().getPriorityFirst(this.main_handler.getClock());
+                        job.active = true;
+                        this.currentJob = job;
+                    } else {
+                        // Stop code, all jobs done
+                        updater.disable_buttons();
+                        this.main_handler.end();
+                        return;
+                    }
+                }
+                // Check if we just started the job:
+                if (job.getBurstsCount() == job.getBurstsRemaining()) {
+                    // We just started this job, we need to set it's start time
+                    job.setStartTime(this.main_handler.getClock());
+                }
+
+                // Set the burstsRemaining
+                job.setBurstsRemaining((job.getBurstsRemaining() - 1));
+
+                // Set % ---> ( ((burstsCount - burstsRemaining) / burstsCount) * 100)
+                job.setPercentDone(Math.ceil(((job.burstsCount - job.burstsRemaining) / job.burstsCount) * 100));
+
+                // We need to add time to turnaround time:
+                job.setTurnAroundTime((job.getTurnAroundTime() + 1));
+
+                // Sort the waitingQueue:
+                this.main_handler.getReadyQueue().sortPriority();
+
+                this.main_handler.getReadyQueue().update(this.main_handler.getClock());
+            }
+        }
     }
     runPP() {
         // Get a job done with the Priority Preemptive algo

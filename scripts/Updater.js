@@ -70,6 +70,9 @@ class Updater {
         // Set up the ReadyQueue to hold the Jobs that have arrived, but can't go because a job is being done:
         var waitQueue = this.handler.getReadyQueue().getWaitingQueue();
         var activeJob = null;
+        // Clear ReadyQueue display:
+        readyQueue.empty();
+        // Display "Ready Queue" waiting queue
         for(var i = 0; i < waitQueue.length; i++) {
             var job = waitQueue[i];
             var jobSpanID = $('#waitingQueue-' + job.getPID()); // "Ready Queue" section span element
