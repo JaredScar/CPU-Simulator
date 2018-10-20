@@ -107,8 +107,8 @@ class Updater {
         }
         var waitAverage = (waitSum / jobs.length);
         var turnAverage = (turnSum / jobs.length);
-        waitingAverage.text(waitAverage);
-        turnaroundAverage.text(turnAverage);
+        waitingAverage.text(waitAverage.toFixed(2));
+        turnaroundAverage.text(turnAverage.toFixed(2));
 
         // Set up the Gantt Chart and add the job's burst if it's active:
         for (var i = 0; i < jobs.length; i++) {
