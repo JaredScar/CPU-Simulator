@@ -1,5 +1,5 @@
 # CPU-Simulator
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/TheWolfBadger/CPU-Simulator/blob/master/LICENSE)
 
 CPU-Simulator was a program designed to show how the CPU works through jobs using the different
 scheduling algorithms available. The program was made for Sister Jane's COM 310 Operating Systems assignment #1.
