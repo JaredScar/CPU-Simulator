@@ -136,6 +136,8 @@ class Main_Handler {
 
     // This is used for the "Finish" button to auto-complete it
     runToComplete() {
+        // Clock tick
+        this.clock++;
         // Update the actual browser (Jobs Table, "CPU" section, "Ready Queue" section, "Average" section, and Gantt Chart)
         this.updater.update_table();
         this.updater.update_page();
@@ -167,9 +169,6 @@ class Main_Handler {
                     cpu.runFCFS();
             }
         }
-
-        // Clock tick
-        this.clock++;
 
         if (!this.ended) {
             this.runToComplete();
