@@ -89,7 +89,7 @@ class ReadyQueue {
         for(var i=0; i < this.queue.length; i++) {
             var job = this.queue[i];
             if(job.getArrivalTime() <= currentClockTick) {
-                if(job.getPriorityLevel() < highestPriority) {
+                if(job.getPriorityLevel() > highestPriority) {
                     jobFinal = job;
                     highestPriority = job.getPriorityLevel();
                 }
@@ -152,9 +152,9 @@ class ReadyQueue {
      */
     sortPriority() {
         this.waitingQueue = this.waitingQueue.sort(function(jobA, jobB) {
-            if(jobA.getPriorityLevel() < jobB.getPriorityLevel())
-                return -1;
             if(jobA.getPriorityLevel() > jobB.getPriorityLevel())
+                return -1;
+            if(jobA.getPriorityLevel() < jobB.getPriorityLevel())
                 return 1;
             return 0;
         });
