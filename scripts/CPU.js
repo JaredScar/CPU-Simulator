@@ -137,10 +137,9 @@ class CPU {
                 // We need to add time to turnaround time:
                 job.setTurnAroundTime((job.getTurnAroundTime() + 1));
 
+                this.main_handler.getReadyQueue().update(this.main_handler.getClock());
                 // Sort the waitingQueue:
                 this.main_handler.getReadyQueue().sortShortest();
-
-                this.main_handler.getReadyQueue().update(this.main_handler.getClock());
             }
         }
     }
@@ -215,10 +214,9 @@ class CPU {
                 // We need to add time to turnaround time:
                 job.setTurnAroundTime((job.getTurnAroundTime() + 1));
 
+                this.main_handler.getReadyQueue().update(this.main_handler.getClock());
                 // Sort the waitingQueue:
                 this.main_handler.getReadyQueue().sortShortest();
-
-                this.main_handler.getReadyQueue().update(this.main_handler.getClock());
             }
         }
     }
@@ -370,10 +368,9 @@ class CPU {
                 // We need to add time to turnaround time:
                 job.setTurnAroundTime((job.getTurnAroundTime() + 1));
 
+                this.main_handler.getReadyQueue().update(this.main_handler.getClock());
                 // Sort the waitingQueue:
                 this.main_handler.getReadyQueue().sortPriority();
-
-                this.main_handler.getReadyQueue().update(this.main_handler.getClock());
             }
         }
     }
@@ -448,10 +445,9 @@ class CPU {
                 // We need to add time to turnaround time:
                 job.setTurnAroundTime((job.getTurnAroundTime() + 1));
 
+                this.main_handler.getReadyQueue().update(this.main_handler.getClock());
                 // Sort the waitingQueue:
                 this.main_handler.getReadyQueue().sortPriority();
-
-                this.main_handler.getReadyQueue().update(this.main_handler.getClock());
             }
         }
     }
