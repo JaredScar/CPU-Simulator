@@ -6,7 +6,7 @@ class Main_Handler {
         this.ended = false;
         this.cpus = []; // Array of CPU instances
         this.schedulerAlgo = null; // Selected Scheduling Algorithm
-        this.clock = 0;
+        this.clock = -1;
         this.quantum = 0; // Quantum field (for Round-Robin)
         this.readyQueue = null;
         this.autoComplete = false;
