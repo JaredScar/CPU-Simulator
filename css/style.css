@@ -1,4 +1,6 @@
-#simulator {}
+#simulator {
+    padding-bottom: 100px;
+}
 #data {
     width: 670px;
     background-color: #ffb600;
@@ -171,4 +173,31 @@ div#wait-turnarounds h3 {
 div#live-chart span.ready-bar {
     width: 15px;
     font-size: 17px;
+}
+
+/* Footer */
+#footer {
+    background-color: #EAB533;
+    border-top: 8px solid #DAA919;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+}
+#footer p {
+    color: #113675;
+    display: inline-block;
+    margin-top: 15px;
+}
+#footer p#personal {
+    font-weight: bold;
+    float: right;
+    margin-right: 60px;
+}
+#footer a {
+    text-decoration: none;
+    color: black;
+}
+#footer a:hover {
+    opacity: .5;
 }
