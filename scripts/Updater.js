@@ -78,6 +78,10 @@ class Updater {
             var jobSpanID = $('#waitingQueue-' + job.getPID()); // "Ready Queue" section span element
             if(job.isActive()) {
                 activeJob = job;
+                this.handler.getReadyQueue().removeWaitingJob(activeJob);
+                // Remove it's SpanID too:
+                var activeJobSpanID = $('#waitingQueue-' + activeJob.getPID());
+                activeJobSpanID.remove();
             } else {
                 // We want to increase their wait time here too:
                 job.setWaitTime((job.getWaitTime() + 1));
@@ -88,13 +92,6 @@ class Updater {
                 // It doesn't exist, we need to create it
                 readyQueue.append('<span class="ready-bar bar-' + job.getPID() + '" id="waitingQueue-' + job.getPID() + '">' + job.getPID() + '</span>');
             }
-        }
-        // Remove the job that has been started (if one has been):
-        if(activeJob != null) {
-            this.handler.getReadyQueue().removeWaitingJob(activeJob);
-            // Remove it's SpanID too:
-            var activeJobSpanID = $('#waitingQueue-' + activeJob.getPID());
-            activeJobSpanID.remove();
         }
 
         // Set up the average count (easy math):
