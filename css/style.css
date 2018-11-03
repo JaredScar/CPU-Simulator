@@ -1,111 +1,149 @@
+/* For iPhone 6+++ landscape mode: */
+body {
+    background-color: #ececec;
+}
 #simulator {
-    padding-bottom: 100px;
+    width: 100%;
+    background-color: #ececec;
 }
 #data {
-    width: 670px;
-    background-color: #ffb600;
-    padding-left: 60px;
-    padding-bottom: 200px;
-    padding-top: 100px;
-    display: inline-block;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
 }
 div#data h2 {}
 div#data .column {
+    width: 100px;
     display: inline-block;
-    width: 160px;
-    vertical-align: top;
+    padding-right: 20px;
 }
 div#data span.label {
-    width: 120px;
-    display: inline-block;
-    text-align: center;
+    width: 100px;
 }
 div#data select {
-    width: 120px;
-    margin-bottom: 25px;
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 div#data button {
-    width: 120px;
+    width: 100px;
+    margin-bottom: 15px;
 }
 /* #data bottom columns */
-div#data .column-lg {
-    display: inline-block;
-    margin-top: 25px;
-    width: 324px;
-}
+div#data .column-lg {}
 div#data .column-lg button {
-    width: 284px;
+    width: 225px;
 }
 
 /* Job Pool */
 #job-pool {
-    display: inline-block;
-    vertical-align: top;
-    height: 496px;
-    padding-left: 60px;
-    padding-right: 60px;
-    background-color: #00f9ff;
+    width: 100%;
+    padding-bottom: 20px;
 }
 div#job-pool table {
-    border: 2px solid black;
+    border-collapse: collapse;
 }
-div#job-pool table tr {
-}
+div#job-pool table tr {}
 div#job-pool table tr th {
-    padding-left: 10px;
-    padding-right: 10px;
+    border-bottom: 1px solid #5d5d5d;
     text-align: center;
-    border: 2px solid black;
+    font-size: 10px;
+    font-weight: normal;
+    padding-right: 4px;
+    padding-left: 4px;
 }
 div#job-pool table tr td {
-    border: 2px solid black;
+    border-bottom: 1px solid #5d5d5d;
     text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 14px;
 }
 
 /* CPU */
 #cpu {
-    display: inline-block;
-    vertical-align: top;
-    background-color: #00c000;
-    width: 495px;
-    padding-left: 60px;
-    padding-right: 175px;
-    height: 300px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 div#cpu .cpu-col {
-    width: 120px;
-    display: inline-block;
-}
-div#cpu span {
     width: 100px;
     display: inline-block;
+    padding-right: 10px;
     text-align: center;
 }
+div#cpu span {}
 div#cpu h3 {
-    width: 100px;
     text-align: center;
 }
 
 /* Ready Queue */
 #ready-queue {
-    display: inline-block;
-    vertical-align: top;
-    height: 300px;
-    background-color: #ebebeb;
-    padding-left: 60px;
-    padding-right: 60px;
-    width: 720px;
+    width: 100%;
 }
-div#ready-queue div.ready-bars {}
+div#ready-queue div.ready-bars {
+    height: 80px;
+    margin-top: 30px;
+}
 span.ready-bar {
-    width: 50px;
-    display: inline-block;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
     color: white;
-    font-size: 24px;
-    border-left: 2px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 17px;
+    border-right: 2px solid black;
+}
+/* Average wait and turnaround times */
+#wait-turnarounds {
+    width: 300px;
+}
+div#wait-turnarounds div.col {
+    display: inline-block;
+    padding-right: 40px;
+    width: 100px;
+    text-align: center;
+}
+div#wait-turnarounds span {}
+div#wait-turnarounds h3 {}
+
+/* Gantt Chart */
+#live-chart {
+    height: 130px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin-bottom: 65px;
+}
+div#live-chart span.ready-bar {}
+
+/* Footer */
+#footer {
+    background-color: #EAB533;
+    border-top: 8px solid #DAA919;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    text-align: center;
+}
+#footer p {
+    color: black;
+    font-size: 14px;
+    padding-top: 10px;
+}
+#footer p#personal {
+    padding-top: 10px;
+    font-weight: bold;
+}
+#footer a {
+    color: black;
+    text-decoration: none;
+}
+#footer a:hover {
+    opacity: .5;
 }
 span.ready-bar.bar-0 {
     background-color: red;
@@ -137,67 +175,511 @@ span.ready-bar.bar-8 {
 span.ready-bar.bar-9 {
     background-color: deeppink;
 }
+@media only screen and (min-width: 667px) {
+    /* For iPhone 6+++ landscape mode: */
+    #simulator {}
+    #data {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 60px;
+    }
+    div#data h2 {}
+    div#data .column {}
+    div#data span.label {}
+    div#data select {}
+    div#data button {}
+    /* #data bottom columns */
+    div#data .column-lg {}
+    div#data .column-lg button {
+        width: 475px;
+    }
 
-/* Average wait and turnaround times */
-#wait-turnarounds {
-    display: inline-block;
-    vertical-align: top;
-    background-color: fuchsia;
-    width: 200px;
-    padding-left: 60px;
-    padding-right: 60px;
-    height: 200px;
-}
-div#wait-turnarounds div.col {
-    display: inline-block;
-    margin-left: 20px;
-}
-div#wait-turnarounds span {
-    display: inline-block;
-    text-align: center;
-}
-div#wait-turnarounds h3 {
-    text-align: center;
-}
+    /* Job Pool */
+    #job-pool {}
+    div#job-pool table {}
+    div#job-pool table tr {}
+    div#job-pool table tr th {
+        font-size: 18px;
+    }
+    div#job-pool table tr td {
+        font-size: 18px;
+    }
 
-/* Gantt Chart */
-#live-chart {
-    display: inline-block;
-    vertical-align: top;
-    background-color: teal;
-    height: 200px;
-    padding-left: 60px;
-    padding-right: 60px;
-    width: 1130px;
-}
-div#live-chart span.ready-bar {
-    width: 15px;
-    font-size: 17px;
-}
+    /* CPU */
+    #cpu {}
+    div#cpu .cpu-col {}
+    div#cpu span {}
+    div#cpu h3 {}
 
-/* Footer */
-#footer {
-    background-color: #EAB533;
-    border-top: 8px solid #DAA919;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    height: 50px;
+    /* Ready Queue */
+    #ready-queue {}
+    div#ready-queue div.ready-bars {}
+    span.ready-bar {}
+    /* Average wait and turnaround times */
+    #wait-turnarounds {}
+    div#wait-turnarounds div.col {}
+    div#wait-turnarounds span {}
+    div#wait-turnarounds h3 {}
+
+    /* Gantt Chart */
+    #live-chart {}
+    div#live-chart span.ready-bar {}
+
+    /* Footer */
+    #footer {}
+    #footer p {}
+    #footer p#personal {}
+    #footer a {}
+    #footer a:hover {}
 }
-#footer p {
-    color: #113675;
-    display: inline-block;
-    margin-top: 15px;
+@media only screen and (min-width: 768px) {
+    /* For tablets: */
+    #simulator {}
+    #data {}
+    div#data h2 {}
+    div#data .column {}
+    div#data span.label {}
+    div#data select {}
+    div#data button {}
+    /* #data bottom columns */
+    div#data .column-lg {}
+    div#data .column-lg button {}
+
+    /* Job Pool */
+    #job-pool {}
+    div#job-pool table {}
+    div#job-pool table tr {}
+    div#job-pool table tr th {}
+    div#job-pool table tr td {}
+
+    /* CPU */
+    #cpu {}
+    div#cpu .cpu-col {}
+    div#cpu span {}
+    div#cpu h3 {}
+
+    /* Ready Queue */
+    #ready-queue {}
+    div#ready-queue div.ready-bars {}
+    span.ready-bar {}
+    /* Average wait and turnaround times */
+    #wait-turnarounds {}
+    div#wait-turnarounds div.col {}
+    div#wait-turnarounds span {}
+    div#wait-turnarounds h3 {}
+
+    /* Gantt Chart */
+    #live-chart {}
+    div#live-chart span.ready-bar {}
+
+    /* Footer */
+    #footer {}
+    #footer p {}
+    #footer p#personal {}
+    #footer a {}
+    #footer a:hover {}
 }
-#footer p#personal {
-    font-weight: bold;
-    float: right;
-    margin-right: 60px;
+@media only screen and (min-width: 1024px) {
+    /* iPad Pros:  */
+    #simulator {}
+    #data {
+        margin-left: 0;
+        margin-right: 0;
+        display: inline-block;
+        width: 400px;
+    }
+    div#data h2 {
+        font-size: 32px;
+    }
+    div#data .column {
+        font-size: 28px;
+        width: 170px;
+    }
+    div#data span.label {}
+    div#data select {
+        font-size: 28px;
+        width: 170px;
+    }
+    div#data button {
+        font-size: 28px;
+        width: 170px;
+    }
+    /* #data bottom columns */
+    div#data .column-lg {}
+    div#data .column-lg button {
+        width: 365px;
+    }
+
+    /* Job Pool */
+    #job-pool {
+        width: 500px;
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 20px;
+    }
+    div#job-pool h2 {
+        font-size: 32px;
+    }
+    div#job-pool table {}
+    div#job-pool table tr {}
+    div#job-pool table tr th {}
+    div#job-pool table tr td {
+        font-size: 28px;
+    }
+
+    /* CPU */
+    #cpu {
+        width: 410px;
+        display: inline-block;
+    }
+    #cpu h2 {
+        font-size: 32px;
+    }
+    div#cpu .cpu-col {
+        width: 120px;
+    }
+    div#cpu span {
+        font-size: 22px;
+    }
+    div#cpu h3 {
+        font-size: 24px;
+    }
+
+    /* Ready Queue */
+    #ready-queue {
+        width: 600px;
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 20px;
+    }
+    #ready-queue h2 {
+        font-size: 32px;
+    }
+    div#ready-queue div.ready-bars {
+        padding-top: 30px;
+    }
+    span.ready-bar {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-size: 28px;
+    }
+    /* Average wait and turnaround times */
+    #wait-turnarounds {
+        width: 410px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    #wait-turnarounds h2 {
+        font-size: 32px;
+    }
+    div#wait-turnarounds div.col {}
+    div#wait-turnarounds span {
+        font-size: 22px;
+    }
+    div#wait-turnarounds h3 {
+        font-size: 24px;
+    }
+
+    /* Gantt Chart */
+    #live-chart {
+        width: 500px;
+        display: inline-block;
+        height: 200px;
+    }
+    #live-chart h2 {
+        font-size: 32px;
+        padding-bottom: 20px;
+    }
+    div#live-chart span.ready-bar {}
+
+    /* Footer */
+    #footer {}
+    #footer p {
+        display: inline-block;
+        float: left;
+        font-size: 24px;
+        margin-left: 20px;
+        padding-top: 15px;
+    }
+    #footer p#personal {
+        float: right;
+        margin-right: 20px;
+        padding-top: 15px;
+    }
+    #footer a {}
+    #footer a:hover {}
 }
-#footer a {
-    text-decoration: none;
-    color: black;
+@media only screen and (min-width: 1366px) {
+    /* Desktop screens and iPad pro sideways: */
+    #simulator {}
+    #data {
+        width: 700px;
+    }
+    div#data h2 {
+        font-size: 26px;
+    }
+    div#data .column {
+        width: 150px;
+    }
+    div#data span.label {
+        font-size: 22px;
+    }
+    div#data select {
+        font-size: 22px;
+    }
+    div#data button {
+        font-size: 22px;
+    }
+    /* #data bottom columns */
+    div#data .column-lg {}
+    div#data .column-lg button {
+        width: 695px;
+    }
+
+    /* Job Pool */
+    #job-pool {}
+    div#job-pool table {}
+    div#job-pool table tr {}
+    div#job-pool table tr th {
+        font-size: 20px;
+    }
+    div#job-pool table tr td {
+        font-size: 20px;
+    }
+
+    /* CPU */
+    #cpu {}
+    div#cpu .cpu-col {}
+    div#cpu span {}
+    div#cpu h3 {}
+
+    /* Ready Queue */
+    #ready-queue {}
+    div#ready-queue div.ready-bars {}
+    span.ready-bar {}
+    /* Average wait and turnaround times */
+    #wait-turnarounds {}
+    div#wait-turnarounds div.col {}
+    div#wait-turnarounds span {}
+    div#wait-turnarounds h3 {}
+
+    /* Gantt Chart */
+    #live-chart {
+        width: 900px;
+    }
+    div#live-chart span.ready-bar {}
+
+    /* Footer */
+    #footer {}
+    #footer p {}
+    #footer p#personal {}
+    #footer a {}
+    #footer a:hover {}
 }
-#footer a:hover {
-    opacity: .5;
+@media only screen and (min-width: 1500px) {
+    /* Desktop screens 1500px - 1740px : */
+    #simulator {}
+    #data {}
+    div#data h2 {}
+    div#data .column {}
+    div#data span.label {}
+    div#data select {}
+    div#data button {}
+    /* #data bottom columns */
+    div#data .column-lg {}
+    div#data .column-lg button {}
+
+    /* Job Pool */
+    #job-pool {
+        width: 700px;
+    }
+    div#job-pool table {}
+    div#job-pool table tr {}
+    div#job-pool table tr th {}
+    div#job-pool table tr td {}
+
+    /* CPU */
+    #cpu {}
+    div#cpu .cpu-col {}
+    div#cpu span {}
+    div#cpu h3 {}
+
+    /* Ready Queue */
+    #ready-queue {
+        width: 940px;
+    }
+    div#ready-queue div.ready-bars {}
+    span.ready-bar {}
+    /* Average wait and turnaround times */
+    #wait-turnarounds {}
+    div#wait-turnarounds div.col {}
+    div#wait-turnarounds span {}
+    div#wait-turnarounds h3 {}
+
+    /* Gantt Chart */
+    #live-chart {
+        width: 1050px;
+    }
+    div#live-chart span.ready-bar {}
+
+    /* Footer */
+    #footer {}
+    #footer p {}
+    #footer p#personal {}
+    #footer a {}
+    #footer a:hover {}
+}
+@media only screen and (min-width: 1740px) {
+    /* Desktop screens: */
+    #simulator {}
+    #data {}
+    div#data h2 {}
+    div#data .column {}
+    div#data span.label {}
+    div#data select {}
+    div#data button {}
+    /* #data bottom columns */
+    div#data .column-lg {}
+    div#data .column-lg button {}
+
+    /* Job Pool */
+    #job-pool {}
+    div#job-pool table {}
+    div#job-pool table tr {}
+    div#job-pool table tr th {}
+    div#job-pool table tr td {}
+
+    /* CPU */
+    #cpu {}
+    div#cpu .cpu-col {}
+    div#cpu span {}
+    div#cpu h3 {}
+
+    /* Ready Queue */
+    #ready-queue {}
+    div#ready-queue div.ready-bars {}
+    span.ready-bar {}
+    /* Average wait and turnaround times */
+    #wait-turnarounds {}
+    div#wait-turnarounds div.col {}
+    div#wait-turnarounds span {}
+    div#wait-turnarounds h3 {}
+
+    /* Gantt Chart */
+    #live-chart {}
+    div#live-chart span.ready-bar {}
+
+    /* Footer */
+    #footer {}
+    #footer p {}
+    #footer p#personal {}
+    #footer a {}
+    #footer a:hover {}
+}
+@media only screen and (min-width: 1800px) {
+    /* Desktop screens (2000 over): */
+    #simulator {}
+    #data {
+        padding-right: 100px;
+    }
+    div#data h2 {}
+    div#data .column {}
+    div#data span.label {}
+    div#data select {}
+    div#data button {}
+    /* #data bottom columns */
+    div#data .column-lg {}
+    div#data .column-lg button {}
+
+    /* Job Pool */
+    #job-pool {
+        width: 990px;
+    }
+    div#job-pool table {}
+    div#job-pool table tr {}
+    div#job-pool table tr th {}
+    div#job-pool table tr td {}
+
+    /* CPU */
+    #cpu {}
+    div#cpu .cpu-col {}
+    div#cpu span {}
+    div#cpu h3 {}
+
+    /* Ready Queue */
+    #ready-queue {
+        width: 1380px;
+    }
+    div#ready-queue div.ready-bars {}
+    span.ready-bar {}
+    /* Average wait and turnaround times */
+    #wait-turnarounds {}
+    div#wait-turnarounds div.col {}
+    div#wait-turnarounds span {}
+    div#wait-turnarounds h3 {}
+
+    /* Gantt Chart */
+    #live-chart {
+        width: 1380px;
+    }
+    div#live-chart span.ready-bar {}
+
+    /* Footer */
+    #footer {}
+    #footer p {}
+    #footer p#personal {}
+    #footer a {}
+    #footer a:hover {}
+}
+@media only screen and (min-width: 2500px) {
+    /* Desktop screens (2500 over): */
+    #simulator {}
+    #data {}
+    div#data h2 {}
+    div#data .column {}
+    div#data span.label {}
+    div#data select {}
+    div#data button {}
+    /* #data bottom columns */
+    div#data .column-lg {}
+    div#data .column-lg button {}
+
+    /* Job Pool */
+    #job-pool {
+        width: 1690px;
+    }
+    div#job-pool table {}
+    div#job-pool table tr {}
+    div#job-pool table tr th {}
+    div#job-pool table tr td {}
+
+    /* CPU */
+    #cpu {}
+    div#cpu .cpu-col {}
+    div#cpu span {}
+    div#cpu h3 {}
+
+    /* Ready Queue */
+    #ready-queue {}
+    div#ready-queue div.ready-bars {}
+    span.ready-bar {}
+    /* Average wait and turnaround times */
+    #wait-turnarounds {}
+    div#wait-turnarounds div.col {}
+    div#wait-turnarounds span {}
+    div#wait-turnarounds h3 {}
+
+    /* Gantt Chart */
+    #live-chart {}
+    div#live-chart span.ready-bar {}
+
+    /* Footer */
+    #footer {}
+    #footer p {}
+    #footer p#personal {}
+    #footer a {}
+    #footer a:hover {}
 }
