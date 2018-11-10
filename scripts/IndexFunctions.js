@@ -48,6 +48,15 @@ var readyQueue = $('#ready-queue-bars');
 var waitAverage = $('#wait-average');
 var turnaroundAverage = $('#turnaround-average');
 var liveChart = $('#live-chart');
+
+/**
+ * simulate()
+ * Trigger:
+ *  Pressing Simulate button on webpage
+ * Function:
+ *  Starts the CPU simulation animation by setting up classes
+ *  if they aren't already made and runs simulation animation if they have
+ */
 function simulate() {
     // If they simulate, we disable the next step button while it's being simulated:
     nextStepButton.prop('disabled', true);
@@ -90,12 +99,29 @@ function simulate() {
         this.handler.run();
     }
 }
+/**
+ * stop()
+ * Trigger:
+ *  Clicking Stop button on webpage
+ * Function:
+ *  Let's the Main_Handler know to stop it's loop,
+ *  sets buttons 'Next Step' and 'Simulate' to be
+ *  enabled.
+ */
 function stop() {
     this.handler.ended = true;
     stopButton.prop('disabled', true);
     nextStepButton.removeAttr('disabled');
     simulateButton.removeAttr('disabled');
 }
+/**
+ * next_step()
+ * Trigger:
+ *  Clicking the Next Step button on webpage
+ * Function:
+ *  Does the next step in the process of simulating the CPU
+ *  and it's processes.
+ */
 function next_step() {
     if(this.handler == null) {
         var manualInput = confirm("You would like to input the data for the jobs manually?");
@@ -131,21 +157,51 @@ function next_step() {
     // We update the page now as well:
     this.updater.update_page();
 }
+/**
+ * restart()
+ * Trigger:
+ *  Clicking the Restart button on the webpage
+ * Function:
+ *  Just reloads the webpage, so that the current JavaScript is all gone
+ */
 function restart() {
     window.location.reload();
 }
+/**
+ * start_another()
+ * Trigger:
+ *  Clicking Start another simulation button on the webpage
+ * Function:
+ *  Starts another simulation by using sessionStorage to
+ *  be loaded in onload() to start a new simulation again automatically
+ */
 function start_another() {
     this.handler = null;
     this.updater = null;
     sessionStorage.setItem("Start_Another", true);
     window.location.reload();
 }
+/**
+ * started_another()
+ * Trigger:
+ *  onload function of body on webpage
+ * Function:
+ *  The function used in onload() by start_another()
+ */
 function started_another() {
     if(sessionStorage.getItem("Start_Another")) {
         simulate();
         sessionStorage.clear();
     }
 }
+/**
+ * finish()
+ * Trigger:
+ *  Clicking Finish button on the webpage
+ * Function:
+ *  Runs the simulation loop until all the processes are completely
+ *  finished
+ */
 function finish() {
     this.handler.setAutoComplete(true);
     this.handler.runToComplete();
