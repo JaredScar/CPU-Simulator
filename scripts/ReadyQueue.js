@@ -8,47 +8,107 @@ class ReadyQueue {
         this.waitingQueue = []; // The Queue which holds the Jobs on the Ready Queue
     }
 
+    /**
+     * getQUEUE()
+     *  This function is used to get the Array containing Jobs.
+     *  This is a Constant Array and elements within it are never removed.
+     * @returns {*|Array.<T>|string|Blob|ArrayBuffer}
+     */
     getQUEUE() {
         return this.QUEUE;
     }
 
+    /**
+     * getJobs()
+     *  This function returns the Array containing Jobs
+     *  that have not been finished. When a Job is finished,
+     *  it is then removed from this Array.
+     * @returns {*|null}
+     */
     getJobs() {
         return this.queue;
     }
 
+    /**
+     * setQueue(queue)
+     *  This function sets the new Array to
+     *  the queue and QUEUE Arrays.
+     * @param queue
+     */
     setQueue(queue) {
         this.queue = queue;
-        this.QUEUE = queue;
+        this.QUEUE = queue.slice(0);
     }
 
+    /**
+     * add(job)
+     *  This adds a Job to the queue Array.
+     * @param job
+     */
     add(job) {
         this.queue.push(job);
     }
 
+    /**
+     * remove(job)
+     *  This removes a Job from the queue Array.
+     * @param job
+     */
     remove(job) {
         this.queue = this.queue.filter(function(item) {
             return item !== job;
         });
     }
 
+    /**
+     * clear()
+     *  This sets the queue Array to null.
+     */
     clear() {
         this.queue = null;
     }
 
+    /**
+     * addWaitingJob(job)
+     *  This adds a Job to to the
+     *  Waiting Queue Array.
+     * @param job
+     */
     addWaitingJob(job) {
         this.waitingQueue.push(job);
     }
 
+    /**
+     * getWaitingQueue()
+     *  This gets the Jobs currently
+     *  waiting to be processed
+     *  in the Waiting Queue Array.
+     * @returns {Array|Array.<T>|*}
+     */
     getWaitingQueue() {
         return this.waitingQueue;
     }
 
+    /**
+     * removeWaitingJob(job)
+     *  This removes the specified Job
+     *  from the Waiting Queue Array.
+     * @param job
+     */
     removeWaitingJob(job) {
         this.waitingQueue = this.waitingQueue.filter(function(item) {
             return item !== job;
         });
     }
 
+    /**
+     * update(clockTime)
+     *  This function updates the Waiting Queue
+     *  Array by checking all the Jobs' arrival times.
+     *  It then adds the Job to the Waiting Queue Array when the
+     *  clock time is at or has passed the Job's arrival time.
+     * @param clockTime
+     */
     update(clockTime) {
         for(var i=0; i < this.queue.length; i++) {
             var job = this.queue[i];

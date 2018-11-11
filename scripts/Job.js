@@ -5,22 +5,28 @@ class Job {
 
     constructor(pid) {
         // Generate random data below: TODO
-        this.pid = pid;
+        this.pid = pid; // Process ID
         this.burstsCount = Math.ceil(Math.random() * (10 - 1) + 1); // How many bursts the program needs to be completed
         this.burstsRemaining = this.burstsCount; // Bursts still needed to finish task
-        this.priority = Math.ceil(Math.random() * (40 - 1) + 1); // Priority of the job
+        this.priority = Math.ceil(Math.random() * (100 - 1) + 1); // Priority of the job
         this.startTime = 0; // The time the Job got started by the CPU
         this.arrivalTime = Math.ceil(Math.random() * (this.burstsCount - 1) + 1); // The time the Job gets to the CPU ready queue
         this.turnAroundTime = 0; // The time counted while in the ready queue and while being done (starting from arrivalTime)
         this.waitTime = 0; // The time spent waiting in the ready queue while not being a completed job
         this.completed = false; // Is the Job completed?
         this.percentageDone = 0; // Percent of the program being completed ((burstCount / burstsRemaining) * 100)
-        this.active = false;
-        this.quantCount = 0;
-        this.timesActive = 0;
+        this.active = false; // Is the Job currently active in a CPU or not?
+        this.quantCount = 0; // For use with Round-Robin
+        this.timesActive = 0; // For use with Round-Robin
         // ^ All above data should be randomly generated (besides turnAroundTime, waitTime, startTime, completed, percentageDone) ^
     }
 
+    /**
+     * restart()
+     *  This method resets all the data of Job to their default values
+     *  in case someone would like to restart the Job's from their
+     *  starting positions.
+     */
     restart() {
         this.burstsRemaining = this.burstsCount;
         this.percentageDone = 0;
@@ -30,25 +36,50 @@ class Job {
         this.turnAroundTime = 0;
         this.waitTime = 0;
         this.quantCount = 0;
+        this.timesActive = 0;
     }
 
-    // Getters
+    /**
+     * isActive()
+     *  Is this Job currently active in a CPU?
+     * @returns {boolean|*}
+     */
     isActive() {
         return this.active;
     }
 
+    /**
+     * getTimesActive()
+     *  This is only used for the Round Robin algorithm
+     * @returns {number|*}
+     */
     getTimesActive() {
         return this.timesActive;
     }
 
+    /**
+     * setTimesActive(timesActive)
+     *  This is only used for the Round Robin algorithm
+     * @param timesActive
+     */
     setTimesActive(timesActive) {
         this.timesActive = timesActive;
     }
 
+    /**
+     * getQuantCount()
+     *  This is only used for the Round Robin algorithm
+     * @returns {number|*}
+     */
     getQuantCount() {
         return this.quantCount;
     }
 
+    /**
+     * setQuantCount(quantCount)
+     *  This is only used for the Round Robin algorithm
+     * @param quantCount
+     */
     setQuantCount(quantCount) {
         this.quantCount = quantCount;
     }
