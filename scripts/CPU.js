@@ -226,16 +226,26 @@ class CPU {
         // Does the ReadyQueue have jobs in it?
         if(this.main_handler.getReadyQueue().getJobs().length > 0) {
             var job = this.main_handler.getReadyQueue().getRR(this.main_handler.getClock(), this.main_handler.getQuantum());
+            /**/
             if(this.currentJob === null) {
                 this.currentJob = job;
             } else {
-                this.currentJob.active = false;
-                if(this.currentJob.burstsRemaining !=0) {
-                    this.main_handler.getReadyQueue().addWaitingJob(this.currentJob);
+                if( (this.currentJob.getQuantCount() % this.main_handler.getQuantum()) === 0) { // added
+                    if (job.getPID() !== this.currentJob.getPID()) {
+                        this.currentJob.active = false;
+                        if (this.currentJob.getBurstsRemaining() !== 0) {
+                            this.main_handler.getReadyQueue().addWaitingJob(this.currentJob);
+                        } else {
+                            this.currentJob.setCompleted(true);
+                            this.main_handler.getReadyQueue().remove(this.currentJob);
+                        }
+                        this.currentJob = job;
+                    }
+                } else {
+                    job = this.currentJob;
                 }
-                job.active = true;
-                this.currentJob = job;
             }
+             /**/
             // Make sure the clock is or has passed the ArrivalTime of the job:
             if (job.getArrivalTime() <= this.main_handler.getClock()) {
                 job.active = true;
@@ -290,8 +300,9 @@ class CPU {
 
                 // Round-Robin = We set the quantCount
                 job.setQuantCount( (job.getQuantCount() + 1) );
+                // TODO We need to figure out how to add to timesActive()
                 if( (job.getQuantCount() % this.main_handler.getQuantum()) === 0) {
-                    job.setTimesActive( (job.getTimesActive() + 1) );
+                    job.setTimesActive(job.getTimesActive() + 1);
                 }
 
                 // We need to add time to turnaround time:

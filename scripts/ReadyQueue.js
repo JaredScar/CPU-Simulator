@@ -188,10 +188,17 @@ class ReadyQueue {
     getRR(currentClockTick, maxQuantums) {
         var jobFinal = this.getFirstCome();
         var quantCount = jobFinal.getQuantCount();
+        /** /
+        console.log("   LOOP:   "); // TODO debug, get rid of
+         /**/
         for(var i=0; i < this.queue.length; i++) {
             var job = this.queue[i];
             if(job.getArrivalTime() <= currentClockTick) {
-                if((jobFinal.getQuantCount() % maxQuantums) == 0) {
+                if(jobFinal.getQuantCount() % maxQuantums === 0) {
+                    /** /
+                    console.log("Checking JobFinal[" + jobFinal.getPID() +
+                        "] TimesActive " + jobFinal.getTimesActive() + " to job[" + job.getPID() + "] TimesActive " + job.getTimesActive()); // TODO debug get rid of
+                     /**/
                     if (jobFinal.getTimesActive() > job.getTimesActive()) {
                         if(this.waitingQueue.length > 0 && this.waitingQueue[0].getPID() === job.getPID()) {
                             jobFinal = job;
@@ -201,6 +208,9 @@ class ReadyQueue {
                 }
             }
         }
+        /** /
+        console.log(" FINAL JOB SELECTED: " + jobFinal.getPID()); // TODO debug, get rid of
+         /**/
         return jobFinal;
     }
 
