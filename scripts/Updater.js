@@ -21,7 +21,7 @@ var utilization = $('#utilization');
 var readyQueue = $('#ready-queue-bars');
 var waitingAverage = $('#wait-average');
 var turnaroundAverage = $('#turnaround-average');
-var liveChart = $('#live-chart');
+var liveChart = $('#gantt-bars');
 class Updater {
 
     constructor(handler) {

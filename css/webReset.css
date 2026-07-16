@@ -29,8 +29,8 @@ footer, header, menu, nav, section {
     display: block;
 }
 body {
-    line-height: 1;
-    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
 }
 ol, ul {
     list-style: none;

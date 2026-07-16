@@ -47,7 +47,7 @@ var clockTimer = $('#clock-num');
 var readyQueue = $('#ready-queue-bars');
 var waitAverage = $('#wait-average');
 var turnaroundAverage = $('#turnaround-average');
-var liveChart = $('#live-chart');
+var liveChart = $('#gantt-bars');
 
 /**
  * simulate()

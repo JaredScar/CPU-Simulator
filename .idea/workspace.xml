@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ad64e167-037e-48aa-a70a-bfa954296d21" name="Default" comment="" />
+    <ignored path="CpuSimulator.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="CpuSimulator" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="example.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webReset.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/webReset.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexFunctions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/IndexFunctions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main_Handler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/Main_Handler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Job.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/Job.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+              <folding>
+                <element signature="n#!!doc;n#Job#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Updater.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/Updater.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="82" column="69" selection-start-line="82" selection-start-column="69" selection-end-line="82" selection-end-column="69" />
+              <folding>
+                <marker date="1540518654509" expanded="true" signature="5337:5951" placeholder="..." />
+                <marker date="1540518654509" expanded="true" signature="5615:5659" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadyQueue.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/ReadyQueue.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.79520696">
+              <caret line="194" column="36" selection-start-line="194" selection-start-column="36" selection-end-line="194" selection-end-column="36" />
+              <folding>
+                <element signature="n#!!doc;n#ReadyQueue#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CPU.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/CPU.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="232" column="88" selection-start-line="232" selection-start-column="88" selection-end-line="232" selection-end-column="88" />
+              <folding>
+                <element signature="n#!!doc;n#CPU#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/css/css.css" />
+        <option value="$PROJECT_DIR$/scripts/main_handler.js" />
+        <option value="$PROJECT_DIR$/scripts/BurstsHandler.js" />
+        <option value="$PROJECT_DIR$/example.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/scripts/Main_Handler.js" />
+        <option value="$PROJECT_DIR$/css/webReset.css" />
+        <option value="$PROJECT_DIR$/scripts/Updater.js" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/scripts/IndexFunctions.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/scripts/Job.js" />
+        <option value="$PROJECT_DIR$/scripts/CPU.js" />
+        <option value="$PROJECT_DIR$/scripts/ReadyQueue.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CpuSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CpuSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CpuSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CpuSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CpuSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CpuSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CpuSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad64e167-037e-48aa-a70a-bfa954296d21" name="Default" comment="" />
+      <created>1539370460379</created>
+      <option name="number" value="Default" />
+      <updated>1539370460379</updated>
+    </task>
+    <task id="LOCAL-00001" summary="- Added a readme">
+      <created>1539397032170</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539397032170</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- &quot;Next Step&quot; button is working!&#10;- 1 process can be ran through by using &quot;Next Step button&quot;&#10;&#10;- [NEEDS FIX] Multiple jobs&#10;- [NEEDS FIX] Multiple CPUs&#10;- [NEEDS FIX] Getting what Algorithm was selected from 'Select' element&#10;&#10;- [NEEDS ADDING] &quot;Simulate&quot; button&#10;- [NEEDS ADDING] &quot;Stop&quot; button&#10;- [NEEDS ADDING] &quot;Restart&quot; button&#10;- [NEEDS ADDING] &quot;Start another simulation&quot; button&#10;- [NEEDS ADDING] &quot;Finish&quot; button&#10;- [NEEDS ADDING] &quot;CPU&quot; section being updated&#10;- [NEEDS ADDING] &quot;Ready Queue&quot; section holding waiting processes&#10;- [NEEDS ADDING] &quot;Average&quot; section doing math to figure out average waiting and turnaround times">
+      <created>1539569746478</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539569746478</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- &quot;Next Step&quot; button is working!&#10;- 1 process can be ran through by using &quot;Next Step button&quot;&#10;&#10;- [FIXED] Multiple jobs&#10;- [FIXED] Multiple CPUs&#10;- [FIXED] Getting what Algorithm was selected from 'Select' element&#10;&#10;- [NEEDS FIXING] At the end of a process ending, sometimes need to press &quot;Next Step&quot; button again to complete the process... &#10;&#10;- [NEEDS ADDING] &quot;Simulate&quot; button&#10;- [NEEDS ADDING] &quot;Stop&quot; button&#10;- [NEEDS ADDING] &quot;Restart&quot; button&#10;- [NEEDS ADDING] &quot;Start another simulation&quot; button&#10;- [NEEDS ADDING] &quot;Finish&quot; button&#10;- [NEEDS ADDING] &quot;CPU&quot; section being updated&#10;- [NEEDS ADDING] &quot;Ready Queue&quot; section holding waiting processes&#10;- [NEEDS ADDING] &quot;Average&quot; section doing math to figure out average waiting and turnaround times">
+      <created>1539572636055</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539572636055</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- &quot;Next Step&quot; button is working!&#10;- 1 process can be ran through by using &quot;Next Step button&quot;&#10;&#10;- [FIXED] Multiple jobs&#10;- [FIXED] Multiple CPUs&#10;- [FIXED] Getting what Algorithm was selected from 'Select' element&#10;- [FIXED] At the end of a process ending, sometimes need to press &quot;Next Step&quot; button again to complete the process... &#10;&#10;- [NEEDS ADDING] &quot;Simulate&quot; button&#10;- [NEEDS ADDING] &quot;Stop&quot; button&#10;- [NEEDS ADDING] &quot;Restart&quot; button&#10;- [NEEDS ADDING] &quot;Start another simulation&quot; button&#10;- [NEEDS ADDING] &quot;Finish&quot; button&#10;- [NEEDS ADDING] &quot;CPU&quot; section being updated&#10;- [NEEDS ADDING] &quot;Ready Queue&quot; section holding waiting processes&#10;- [NEEDS ADDING] &quot;Average&quot; section doing math to figure out average waiting and turnaround times">
+      <created>1539572959795</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539572959795</updated>
+    </task>
+    <task id="LOCAL-00005" summary="- &quot;Simulate&quot; button now works and simulation actually runs (quite smoothly too if I do say so myself!)&#10;&#10;- [FIXED] Multiple jobs&#10;- [FIXED] Multiple CPUs&#10;- [FIXED] Getting what Algorithm was selected from 'Select' element&#10;- [FIXED] At the end of a process ending, sometimes need to press &quot;Next Step&quot; button again to complete the process... &#10;- [ADDED] &quot;Simulate&quot; button&#10;&#10;- [NEEDS ADDING] &quot;Stop&quot; button&#10;- [NEEDS ADDING] &quot;Restart&quot; button&#10;- [NEEDS ADDING] &quot;Start another simulation&quot; button&#10;- [NEEDS ADDING] &quot;Finish&quot; button&#10;- [NEEDS ADDING] &quot;CPU&quot; section being updated&#10;- [NEEDS ADDING] &quot;Ready Queue&quot; section holding waiting processes&#10;- [NEEDS ADDING] &quot;Average&quot; section doing math to figure out average waiting and turnaround times&#10;&#10;- [NEED TO DO] All other algorithms besides &quot;FCFS&quot;">
+      <created>1539655444291</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1539655444291</updated>
+    </task>
+    <task id="LOCAL-00006" summary="- &quot;CPU&quot; section now gets updated during simulation!&#10;&#10;- [FIXED] Multiple jobs&#10;- [FIXED] Multiple CPUs&#10;- [FIXED] Getting what Algorithm was selected from 'Select' element&#10;- [FIXED] At the end of a process ending, sometimes need to press &quot;Next Step&quot; button again to complete the process... &#10;- [ADDED] &quot;Simulate&quot; button&#10;- [ADDED] &quot;CPU&quot; section being updated&#10;&#10;- [NEEDS ADDING] &quot;Stop&quot; button&#10;- [NEEDS ADDING] &quot;Restart&quot; button&#10;- [NEEDS ADDING] &quot;Start another simulation&quot; button&#10;- [NEEDS ADDING] &quot;Finish&quot; button&#10;- [NEEDS ADDING] &quot;Ready Queue&quot; section holding waiting processes&#10;- [NEEDS ADDING] &quot;Average&quot; section doing math to figure out average waiting and turnaround times&#10;&#10;- [NEED TO DO] All other algorithms besides &quot;FCFS&quot;">
+      <created>1539656297588</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1539656297588</updated>
+    </task>
+    <task id="LOCAL-00007" summary="- All the buttons now work (although &quot;Restart&quot; and &quot;Start another simulation&quot; do the same thing)&#10;- &quot;Ready Queue&quot; section actually works&#10;- Wait times and turnaround times now incorporated&#10;- &quot;Average&quot; section now fully functional&#10;&#10;&#10;- [ADDED] &quot;Stop&quot; button&#10;- [ADDED] &quot;Restart&quot; button&#10;- [ADDED] &quot;Start another simulation&quot; button&#10;- [ADDED] &quot;Finish&quot; button&#10;- [ADDED] &quot;Ready Queue&quot; section holding waiting processes&#10;- [ADDED] &quot;Average&quot; section doing math to figure out average waiting and turnaround times&#10;&#10;- [NEED TO DO] All other algorithms besides &quot;FCFS&quot;">
+      <created>1539734166073</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1539734166073</updated>
+    </task>
+    <task id="LOCAL-00008" summary="- Honestly I don't know all the things I changed/added in this push... (Bare with me, I'm slacking)&#10;&#10;- [NEED TO DO] All other algorithms besides &quot;FCFS&quot;">
+      <created>1539829622734</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1539829622734</updated>
+    </task>
+    <task id="LOCAL-00009" summary="- &quot;Start another simulation&quot; button now actually will start a brand new simulation after reloading the page&#10;- Some minor tweaks here and there...&#10;- Inputting the jobs' arrival times, bursts, and priority are now functioning properly&#10;&#10;[STILL TO ADD] All the other scheduling algorithms besides FCFS (since FCFS is done)">
+      <created>1539887790293</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1539887790293</updated>
+    </task>
+    <task id="LOCAL-00010" summary="- &quot;Sim Speed&quot; has been replaced for &quot;Quantum&quot; to use with Round Robin&#10;&#10;[STILL TO ADD] All the other scheduling algorithms besides FCFS (since FCFS is done)">
+      <created>1539986804492</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1539986804492</updated>
+    </task>
+    <task id="LOCAL-00011" summary="- Algorithm &quot;Priority Non-Preemptive&quot; has been added (PNP) and is fully functional&#10;&#10;[STILL TO ADD] All the other scheduling algorithms besides FCFS, PNP">
+      <created>1540001982588</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1540001982588</updated>
+    </task>
+    <task id="LOCAL-00012" summary="- Algorithm &quot;Priority Preemptive&quot; has been added (PP) and is fully functional&#10;&#10;[STILL TO ADD] All the other scheduling algorithms besides FCFS, PNP, PP&#10;&#10;Algorithms to add:&#10;- &quot;Shortest Job First&quot;&#10;- &quot;Shortest Remaining Time First&quot;&#10;- &quot;Round Robin&quot;">
+      <created>1540003514911</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1540003514911</updated>
+    </task>
+    <task id="LOCAL-00013" summary="- &quot;Average&quot; section now has values displayed with maximum 2 decimal places now&#10;&#10;[STILL TO ADD] All the other scheduling algorithms besides FCFS, PNP, PP&#10;&#10;Algorithms to add:&#10;- &quot;Shortest Job First&quot;&#10;- &quot;Shortest Remaining Time First&quot;&#10;- &quot;Round Robin&quot;">
+      <created>1540004151435</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1540004151435</updated>
+    </task>
+    <task id="LOCAL-00014" summary="- All algorithms complete and functioning correctly!&#10;&#10;[STILL TO DO] &#10;- More comments within the project">
+      <created>1540067732494</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1540067732494</updated>
+    </task>
+    <task id="LOCAL-00015" summary="- All algorithms complete and functioning correctly!&#10;&#10;[STILL TO DO] &#10;- More comments within the project">
+      <created>1540067756287</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1540067756287</updated>
+    </task>
+    <task id="LOCAL-00016" summary="- All algorithms complete and functioning correctly!&#10;&#10;[STILL TO DO] &#10;- More comments within the project">
+      <created>1540067894127</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1540067894127</updated>
+    </task>
+    <task id="LOCAL-00017" summary="- All algorithms complete and functioning correctly!&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;[BUGS]&#10;- Round-Robin not doing jobs in queue in order from first come first served">
+      <created>1540069037544</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1540069037544</updated>
+    </task>
+    <task id="LOCAL-00018" summary="- &quot;Round Robin&quot; scheduling algorithm bug fixed! &#10;&#10;[STILL TO DO] &#10;- More comments within the project">
+      <created>1540069829266</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1540069829266</updated>
+    </task>
+    <task id="LOCAL-00019" summary="- Footer added&#10;- webReset file added (resets default web css)&#10;&#10;[STILL TO DO] &#10;- More comments within the project">
+      <created>1540427910532</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1540427910532</updated>
+    </task>
+    <task id="LOCAL-00020" summary="- Edited some of webReset file (I like default table settings)&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;- Prettify">
+      <created>1540428105728</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1540428105728</updated>
+    </task>
+    <task id="LOCAL-00021" summary="- Multiple CPUs should be fixed&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;- Prettify">
+      <created>1540518689449</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1540518689449</updated>
+    </task>
+    <task id="LOCAL-00022" summary="- Multiple CPUs is not fixed and needs to be in the future&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;- Prettify">
+      <created>1540518902626</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1540518902626</updated>
+    </task>
+    <task id="LOCAL-00023" summary="- The style of the site is much prettier now! So much better than the rainbow colors we had before...&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature">
+      <created>1541267666513</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1541267666513</updated>
+    </task>
+    <task id="LOCAL-00024" summary="- Documentation done within 'IndexFunctions.js'&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature">
+      <created>1541879410006</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1541879410006</updated>
+    </task>
+    <task id="LOCAL-00025" summary="- Documentation should be fully done hopefully&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature">
+      <created>1541965319507</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1541965319507</updated>
+    </task>
+    <task id="LOCAL-00026" summary="- Added Google Analytics Script&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature">
+      <created>1542053288124</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1542053288124</updated>
+    </task>
+    <task id="LOCAL-00027" summary="- Round-Robin algorithm should be fixed (Still have to check math, but display is working as expected now)&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature">
+      <created>1542154712016</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1542154712016</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Added a readme" />
+    <MESSAGE value="- &quot;Next Step&quot; button is working!&#10;- 1 process can be ran through by using &quot;Next Step button&quot;&#10;&#10;- [NEEDS FIX] Multiple jobs&#10;- [NEEDS FIX] Multiple CPUs&#10;- [NEEDS FIX] Getting what Algorithm was selected from 'Select' element&#10;&#10;- [NEEDS ADDING] &quot;Simulate&quot; button&#10;- [NEEDS ADDING] &quot;Stop&quot; button&#10;- [NEEDS ADDING] &quot;Restart&quot; button&#10;- [NEEDS ADDING] &quot;Start another simulation&quot; button&#10;- [NEEDS ADDING] &quot;Finish&quot; button&#10;- [NEEDS ADDING] &quot;CPU&quot; section being updated&#10;- [NEEDS ADDING] &quot;Ready Queue&quot; section holding waiting processes&#10;- [NEEDS ADDING] &quot;Average&quot; section doing math to figure out average waiting and turnaround times" />
+    <MESSAGE value="- &quot;Next Step&quot; button is working!&#10;- 1 process can be ran through by using &quot;Next Step button&quot;&#10;&#10;- [FIXED] Multiple jobs&#10;- [FIXED] Multiple CPUs&#10;- [FIXED] Getting what Algorithm was selected from 'Select' element&#10;&#10;- [NEEDS FIXING] At the end of a process ending, sometimes need to press &quot;Next Step&quot; button again to complete the process... &#10;&#10;- [NEEDS ADDING] &quot;Simulate&quot; button&#10;- [NEEDS ADDING] &quot;Stop&quot; button&#10;- [NEEDS ADDING] &quot;Restart&quot; button&#10;- [NEEDS ADDING] &quot;Start another simulation&quot; button&#10;- [NEEDS ADDING] &quot;Finish&quot; button&#10;- [NEEDS ADDING] &quot;CPU&quot; section being updated&#10;- [NEEDS ADDING] &quot;Ready Queue&quot; section holding waiting processes&#10;- [NEEDS ADDING] &quot;Average&quot; section doing math to figure out average waiting and turnaround times" />
+    <MESSAGE value="- &quot;Next Step&quot; button is working!&#10;- 1 process can be ran through by using &quot;Next Step button&quot;&#10;&#10;- [FIXED] Multiple jobs&#10;- [FIXED] Multiple CPUs&#10;- [FIXED] Getting what Algorithm was selected from 'Select' element&#10;- [FIXED] At the end of a process ending, sometimes need to press &quot;Next Step&quot; button again to complete the process... &#10;&#10;- [NEEDS ADDING] &quot;Simulate&quot; button&#10;- [NEEDS ADDING] &quot;Stop&quot; button&#10;- [NEEDS ADDING] &quot;Restart&quot; button&#10;- [NEEDS ADDING] &quot;Start another simulation&quot; button&#10;- [NEEDS ADDING] &quot;Finish&quot; button&#10;- [NEEDS ADDING] &quot;CPU&quot; section being updated&#10;- [NEEDS ADDING] &quot;Ready Queue&quot; section holding waiting processes&#10;- [NEEDS ADDING] &quot;Average&quot; section doing math to figure out average waiting and turnaround times" />
+    <MESSAGE value="- &quot;Simulate&quot; button now works and simulation actually runs (quite smoothly too if I do say so myself!)&#10;&#10;- [FIXED] Multiple jobs&#10;- [FIXED] Multiple CPUs&#10;- [FIXED] Getting what Algorithm was selected from 'Select' element&#10;- [FIXED] At the end of a process ending, sometimes need to press &quot;Next Step&quot; button again to complete the process... &#10;- [ADDED] &quot;Simulate&quot; button&#10;&#10;- [NEEDS ADDING] &quot;Stop&quot; button&#10;- [NEEDS ADDING] &quot;Restart&quot; button&#10;- [NEEDS ADDING] &quot;Start another simulation&quot; button&#10;- [NEEDS ADDING] &quot;Finish&quot; button&#10;- [NEEDS ADDING] &quot;CPU&quot; section being updated&#10;- [NEEDS ADDING] &quot;Ready Queue&quot; section holding waiting processes&#10;- [NEEDS ADDING] &quot;Average&quot; section doing math to figure out average waiting and turnaround times&#10;&#10;- [NEED TO DO] All other algorithms besides &quot;FCFS&quot;" />
+    <MESSAGE value="- &quot;CPU&quot; section now gets updated during simulation!&#10;&#10;- [FIXED] Multiple jobs&#10;- [FIXED] Multiple CPUs&#10;- [FIXED] Getting what Algorithm was selected from 'Select' element&#10;- [FIXED] At the end of a process ending, sometimes need to press &quot;Next Step&quot; button again to complete the process... &#10;- [ADDED] &quot;Simulate&quot; button&#10;- [ADDED] &quot;CPU&quot; section being updated&#10;&#10;- [NEEDS ADDING] &quot;Stop&quot; button&#10;- [NEEDS ADDING] &quot;Restart&quot; button&#10;- [NEEDS ADDING] &quot;Start another simulation&quot; button&#10;- [NEEDS ADDING] &quot;Finish&quot; button&#10;- [NEEDS ADDING] &quot;Ready Queue&quot; section holding waiting processes&#10;- [NEEDS ADDING] &quot;Average&quot; section doing math to figure out average waiting and turnaround times&#10;&#10;- [NEED TO DO] All other algorithms besides &quot;FCFS&quot;" />
+    <MESSAGE value="- All the buttons now work (although &quot;Restart&quot; and &quot;Start another simulation&quot; do the same thing)&#10;- &quot;Ready Queue&quot; section actually works&#10;- Wait times and turnaround times now incorporated&#10;- &quot;Average&quot; section now fully functional&#10;&#10;&#10;- [ADDED] &quot;Stop&quot; button&#10;- [ADDED] &quot;Restart&quot; button&#10;- [ADDED] &quot;Start another simulation&quot; button&#10;- [ADDED] &quot;Finish&quot; button&#10;- [ADDED] &quot;Ready Queue&quot; section holding waiting processes&#10;- [ADDED] &quot;Average&quot; section doing math to figure out average waiting and turnaround times&#10;&#10;- [NEED TO DO] All other algorithms besides &quot;FCFS&quot;" />
+    <MESSAGE value="- Honestly I don't know all the things I changed/added in this push... (Bare with me, I'm slacking)&#10;&#10;- [NEED TO DO] All other algorithms besides &quot;FCFS&quot;" />
+    <MESSAGE value="- &quot;Start another simulation&quot; button now actually will start a brand new simulation after reloading the page&#10;- Some minor tweaks here and there...&#10;- Inputting the jobs' arrival times, bursts, and priority are now functioning properly&#10;&#10;[STILL TO ADD] All the other scheduling algorithms besides FCFS (since FCFS is done)" />
+    <MESSAGE value="- &quot;Sim Speed&quot; has been replaced for &quot;Quantum&quot; to use with Round Robin&#10;&#10;[STILL TO ADD] All the other scheduling algorithms besides FCFS (since FCFS is done)" />
+    <MESSAGE value="- Algorithm &quot;Priority Non-Preemptive&quot; has been added (PNP) and is fully functional&#10;&#10;[STILL TO ADD] All the other scheduling algorithms besides FCFS, PNP" />
+    <MESSAGE value="- Algorithm &quot;Priority Preemptive&quot; has been added (PP) and is fully functional&#10;&#10;[STILL TO ADD] All the other scheduling algorithms besides FCFS, PNP, PP&#10;&#10;Algorithms to add:&#10;- &quot;Shortest Job First&quot;&#10;- &quot;Shortest Remaining Time First&quot;&#10;- &quot;Round Robin&quot;" />
+    <MESSAGE value="- &quot;Average&quot; section now has values displayed with maximum 2 decimal places now&#10;&#10;[STILL TO ADD] All the other scheduling algorithms besides FCFS, PNP, PP&#10;&#10;Algorithms to add:&#10;- &quot;Shortest Job First&quot;&#10;- &quot;Shortest Remaining Time First&quot;&#10;- &quot;Round Robin&quot;" />
+    <MESSAGE value="- All algorithms complete and functioning correctly!&#10;&#10;[STILL TO DO] &#10;- More comments within the project" />
+    <MESSAGE value="- All algorithms complete and functioning correctly!&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;[BUGS]&#10;- Round-Robin not doing jobs in queue in order from first come first served" />
+    <MESSAGE value="- &quot;Round Robin&quot; scheduling algorithm bug fixed! &#10;&#10;[STILL TO DO] &#10;- More comments within the project" />
+    <MESSAGE value="- Footer added&#10;- webReset file added (resets default web css)&#10;&#10;[STILL TO DO] &#10;- More comments within the project" />
+    <MESSAGE value="- Edited some of webReset file (I like default table settings)&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;- Prettify" />
+    <MESSAGE value="- Multiple CPUs should be fixed&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;- Prettify" />
+    <MESSAGE value="- Multiple CPUs is not fixed and needs to be in the future&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;- Prettify" />
+    <MESSAGE value="- The style of the site is much prettier now! So much better than the rainbow colors we had before...&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature" />
+    <MESSAGE value="- Documentation done within 'IndexFunctions.js'&#10;&#10;[STILL TO DO] &#10;- More comments within the project&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature" />
+    <MESSAGE value="- Documentation should be fully done hopefully&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature" />
+    <MESSAGE value="- Added Google Analytics Script&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature" />
+    <MESSAGE value="- Round-Robin algorithm should be fixed (Still have to check math, but display is working as expected now)&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Round-Robin algorithm should be fixed (Still have to check math, but display is working as expected now)&#10;&#10;[NEEDS FIXING]&#10;- Multiple CPUs feature" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="165" column="25" selection-start-line="165" selection-start-column="25" selection-end-line="165" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/webReset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/IndexFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Main_Handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ReadyQueue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc;n#ReadyQueue#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Job.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc;n#Job#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CPU.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc;n#CPU#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/IndexFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Updater.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="36" selection-start-line="104" selection-start-column="36" selection-end-line="104" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Main_Handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ReadyQueue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc;n#ReadyQueue#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Job.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc;n#Job#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CPU.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc;n#CPU#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/IndexFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Updater.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="36" selection-start-line="104" selection-start-column="36" selection-end-line="104" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Main_Handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ReadyQueue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc;n#ReadyQueue#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Job.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc;n#Job#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CPU.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc;n#CPU#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/IndexFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="149" column="39" selection-start-line="149" selection-start-column="39" selection-end-line="149" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Updater.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="36" selection-start-line="104" selection-start-column="36" selection-end-line="104" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Main_Handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="21" selection-start-line="137" selection-start-column="21" selection-end-line="137" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ReadyQueue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc;n#ReadyQueue#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Job.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc;n#Job#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CPU.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="242" column="34" selection-start-line="242" selection-start-column="34" selection-end-line="242" selection-end-column="34" />
+          <folding>
+            <element signature="n#!!doc;n#CPU#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/webReset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Main_Handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/IndexFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Job.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+          <folding>
+            <element signature="n#!!doc;n#Job#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Updater.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="69" selection-start-line="82" selection-start-column="69" selection-end-line="82" selection-end-column="69" />
+          <folding>
+            <marker date="1540518654509" expanded="true" signature="5337:5951" placeholder="..." />
+            <marker date="1540518654509" expanded="true" signature="5615:5659" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ReadyQueue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79520696">
+          <caret line="194" column="36" selection-start-line="194" selection-start-column="36" selection-end-line="194" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc;n#ReadyQueue#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CPU.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="232" column="88" selection-start-line="232" selection-start-column="88" selection-end-line="232" selection-end-column="88" />
+          <folding>
+            <element signature="n#!!doc;n#CPU#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

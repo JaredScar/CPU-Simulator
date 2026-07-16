@@ -1,685 +1,651 @@
-/* For iPhone 6+++ landscape mode: */
-body {
-    background-color: #ececec;
+/* ============================================================
+   CSS Custom Properties — Design Tokens
+   ============================================================ */
+:root {
+    --bg:           #0c1322;
+    --surface:      #162032;
+    --surface-2:    #1e2e46;
+    --surface-3:    #263858;
+    --border:       #2e3f5c;
+    --primary:      #3b82f6;
+    --primary-dim:  #1d4ed8;
+    --primary-glow: rgba(59,130,246,0.20);
+    --danger:       #ef4444;
+    --danger-dim:   #b91c1c;
+    --success:      #22c55e;
+    --warning:      #f59e0b;
+    --text-1:       #f1f5f9;
+    --text-2:       #94a3b8;
+    --text-3:       #64748b;
+    --mono:         'JetBrains Mono', monospace;
+    --sans:         'Inter', sans-serif;
+    --radius:       10px;
+    --radius-sm:    6px;
+    --shadow:       0 4px 24px rgba(0,0,0,0.45);
+    --shadow-sm:    0 2px 8px rgba(0,0,0,0.35);
+    --transition:   150ms ease;
 }
+
+/* ============================================================
+   Base
+   ============================================================ */
+body {
+    background-color: var(--bg);
+    color: var(--text-1);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ============================================================
+   Simulator wrapper
+   ============================================================ */
 #simulator {
     width: 100%;
-    background-color: #ececec;
-}
-#data {
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: block;
-}
-div#data h2 {}
-div#data .column {
-    width: 100px;
-    display: inline-block;
-    padding-right: 20px;
-}
-div#data span.label {
-    width: 100px;
-}
-div#data select {
-    width: 100px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-div#data button {
-    width: 100px;
-    margin-bottom: 15px;
-}
-/* #data bottom columns */
-div#data .column-lg {}
-div#data .column-lg button {
-    width: 225px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 24px 16px 120px;
+    box-sizing: border-box;
 }
 
-/* Job Pool */
-#job-pool {
-    width: 100%;
-    padding-bottom: 20px;
+/* ============================================================
+   Shared card style
+   ============================================================ */
+#data,
+#job-pool,
+#cpu,
+#ready-queue,
+#wait-turnarounds,
+#live-chart {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-sm);
 }
+
+/* ============================================================
+   Section headings
+   ============================================================ */
+#data h2,
+#job-pool h2,
+#cpu h2,
+#ready-queue h2,
+#wait-turnarounds h2,
+#live-chart h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-1);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-left: 10px;
+    border-left: 3px solid var(--primary);
+}
+
+/* ============================================================
+   Control Panel — #data
+   ============================================================ */
+#data {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+#data h2 {
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+div#data .column,
+div#data .column-lg {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+div#data .column-lg {
+    flex: 1 1 100%;
+}
+
+div#data span.label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-1);
+}
+
+div#data select {
+    background: var(--surface-2);
+    color: var(--text-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 7px 10px;
+    font-family: var(--sans);
+    font-size: 13px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 32px;
+    transition: border-color var(--transition), background-color var(--transition);
+    min-width: 110px;
+}
+
+div#data select:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: var(--surface-3);
+}
+
+div#data select:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Buttons */
+div#data button {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background var(--transition), opacity var(--transition), transform var(--transition);
+    white-space: nowrap;
+}
+
+div#data button:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+div#data button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#simulate-button {
+    background: var(--primary);
+    color: #fff;
+}
+#simulate-button:hover:not(:disabled) {
+    background: var(--primary-dim);
+}
+
+#stop-button {
+    background: var(--danger);
+    color: #fff;
+}
+#stop-button:hover:not(:disabled) {
+    background: var(--danger-dim);
+}
+
+#next-step-button {
+    background: var(--surface-3);
+    color: var(--text-1);
+    border: 1px solid var(--border);
+}
+#next-step-button:hover:not(:disabled) {
+    background: var(--surface-2);
+    border-color: var(--primary);
+}
+
+#restart-button {
+    background: var(--surface-3);
+    color: var(--text-2);
+    border: 1px solid var(--border);
+}
+#restart-button:hover:not(:disabled) {
+    background: var(--surface-2);
+}
+
+#start-another {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    width: 100%;
+}
+#start-another:hover:not(:disabled) {
+    background: var(--primary-glow);
+}
+
+#finish {
+    background: var(--success);
+    color: #fff;
+    width: 100%;
+}
+#finish:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+/* ============================================================
+   Job Pool Table — #job-pool
+   ============================================================ */
+#job-pool {
+    overflow-x: auto;
+}
+
 div#job-pool table {
     border-collapse: collapse;
+    width: 100%;
 }
-div#job-pool table tr {}
+
 div#job-pool table tr th {
-    border-bottom: 1px solid #5d5d5d;
+    background: var(--surface-2);
+    color: var(--text-1);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     text-align: center;
-    font-size: 10px;
-    font-weight: normal;
-    padding-right: 4px;
-    padding-left: 4px;
-}
-div#job-pool table tr td {
-    border-bottom: 1px solid #5d5d5d;
-    text-align: center;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    font-size: 14px;
-}
-
-/* CPU */
-#cpu {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-div#cpu .cpu-col {
-    width: 100px;
-    display: inline-block;
-    padding-right: 10px;
-    text-align: center;
-}
-div#cpu span {}
-div#cpu h3 {
-    text-align: center;
-}
-
-/* Ready Queue */
-#ready-queue {
-    width: 100%;
-}
-div#ready-queue div.ready-bars {
-    height: 80px;
-    margin-top: 30px;
-}
-span.ready-bar {
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 5px;
-    padding-left: 5px;
-    font-size: 17px;
-    border-right: 2px solid black;
-}
-/* Average wait and turnaround times */
-#wait-turnarounds {
-    width: 300px;
-}
-div#wait-turnarounds div.col {
-    display: inline-block;
-    padding-right: 40px;
-    width: 100px;
-    text-align: center;
-}
-div#wait-turnarounds span {}
-div#wait-turnarounds h3 {}
-
-/* Gantt Chart */
-#live-chart {
-    height: 130px;
-    overflow-x: scroll;
+    padding: 10px 6px;
+    border-bottom: 2px solid var(--primary);
     white-space: nowrap;
-    margin-bottom: 65px;
 }
-div#live-chart span.ready-bar {}
 
-/* Footer */
+div#job-pool table tr th:first-child {
+    border-radius: var(--radius-sm) 0 0 0;
+}
+div#job-pool table tr th:last-child {
+    border-radius: 0 var(--radius-sm) 0 0;
+}
+
+div#job-pool table tr td {
+    text-align: center;
+    padding: 9px 6px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-1);
+    border-bottom: 1px solid var(--border);
+    transition: background var(--transition);
+}
+
+div#job-pool table tr:last-child td {
+    border-bottom: none;
+}
+
+div#job-pool table tr:hover td {
+    background: var(--surface-2);
+}
+
+div#job-pool table tr:nth-child(even) td {
+    background: rgba(255,255,255,0.02);
+}
+
+/* ============================================================
+   CPU Status — #cpu
+   ============================================================ */
+#cpu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: stretch;
+}
+
+#cpu h2 {
+    width: 100%;
+}
+
+div#cpu .cpu-col {
+    flex: 1 1 100px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+div#cpu span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-1);
+}
+
+div#cpu h3 {
+    font-family: var(--mono);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+}
+
+#clock-num {
+    color: var(--warning) !important;
+}
+
+#utilization {
+    color: var(--success) !important;
+}
+
+/* ============================================================
+   Ready Queue — #ready-queue
+   ============================================================ */
+#ready-queue {
+    display: flex;
+    flex-direction: column;
+}
+
+div#ready-queue div.ready-bars {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    min-height: 64px;
+    padding: 8px 0;
+    /* Dashed intake rail behind the bars */
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 6px,
+            var(--border) 6px,
+            var(--border) 8px
+        ) bottom / 100% 2px no-repeat;
+}
+
+/* "CPU ←" label on the right end of the queue */
+div#ready-queue div.ready-bars::after {
+    content: '← CPU';
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-3);
+    margin-left: 12px;
+    white-space: nowrap;
+}
+
+span.ready-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 50px;
+    padding: 0 16px;
+    border-radius: var(--radius-sm);
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    position: relative;
+    margin-right: 28px;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* Arrow connector between queue items */
+#ready-queue-bars span.ready-bar::after {
+    content: '›';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--text-3);
+    font-family: var(--sans);
+    line-height: 1;
+}
+
+/* No arrow on the last item */
+#ready-queue-bars span.ready-bar:last-child {
+    margin-right: 0;
+}
+#ready-queue-bars span.ready-bar:last-child::after {
+    display: none;
+}
+
+span.ready-bar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+/* ============================================================
+   Average — #wait-turnarounds
+   ============================================================ */
+#wait-turnarounds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: stretch;
+}
+
+#wait-turnarounds h2 {
+    width: 100%;
+}
+
+div#wait-turnarounds div.col {
+    flex: 1 1 100px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+div#wait-turnarounds span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-1);
+}
+
+div#wait-turnarounds h3 {
+    font-family: var(--mono);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-1);
+}
+
+/* ============================================================
+   Gantt Chart — #live-chart
+   ============================================================ */
+#live-chart {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#live-chart h2 {
+    margin-bottom: 12px;
+    flex-shrink: 0;
+}
+
+/* Scrollable track container */
+#gantt-bars {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 12px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    min-height: 88px;
+    /* Blue bottom axis rail */
+    box-shadow: inset 0 -3px 0 var(--primary);
+}
+
+#gantt-bars span.ready-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: bottom;
+    height: 64px;
+    width: 46px;
+    padding: 0;
+    margin-right: 2px;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+/* ============================================================
+   Bar colors — vibrant palette for dark background
+   ============================================================ */
+span.ready-bar.bar-0  { background: #ef4444; }
+span.ready-bar.bar-1  { background: #8b5cf6; }
+span.ready-bar.bar-2  { background: #3b82f6; }
+span.ready-bar.bar-3  { background: #10b981; }
+span.ready-bar.bar-4  { background: #f59e0b; color: #1a1a1a; }
+span.ready-bar.bar-5  { background: #ec4899; }
+span.ready-bar.bar-6  { background: #14b8a6; }
+span.ready-bar.bar-7  { background: #f97316; }
+span.ready-bar.bar-8  { background: #06b6d4; }
+span.ready-bar.bar-9  { background: #a855f7; }
+
+/* ============================================================
+   Footer
+   ============================================================ */
 #footer {
-    background-color: #EAB533;
-    border-top: 8px solid #DAA919;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
     width: 100%;
     position: fixed;
     bottom: 0;
-    height: 60px;
-    text-align: center;
+    left: 0;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    box-sizing: border-box;
+    z-index: 100;
 }
+
 #footer p {
-    color: black;
-    font-size: 14px;
-    padding-top: 10px;
+    color: var(--text-2);
+    font-size: 12px;
 }
+
 #footer p#personal {
-    padding-top: 10px;
-    font-weight: bold;
+    font-weight: 600;
 }
+
 #footer a {
-    color: black;
+    color: var(--primary);
     text-decoration: none;
+    transition: opacity var(--transition);
 }
+
 #footer a:hover {
-    opacity: .5;
+    opacity: 0.7;
 }
-span.ready-bar.bar-0 {
-    background-color: red;
+
+/* ============================================================
+   Scrollbar styling
+   ============================================================ */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
 }
-span.ready-bar.bar-1 {
-    background-color: gray;
+::-webkit-scrollbar-track {
+    background: var(--surface);
 }
-span.ready-bar.bar-2 {
-    background-color: black;
+::-webkit-scrollbar-thumb {
+    background: var(--surface-3);
+    border-radius: 3px;
 }
-span.ready-bar.bar-3 {
-    background-color: blue;
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-3);
 }
-span.ready-bar.bar-4 {
-    background-color: greenyellow;
-}
-span.ready-bar.bar-5 {
-    background-color: brown;
-}
-span.ready-bar.bar-6 {
-    background-color: yellow;
-}
-span.ready-bar.bar-7 {
-    background-color: purple;
-}
-span.ready-bar.bar-8 {
-    background-color: orange;
-}
-span.ready-bar.bar-9 {
-    background-color: deeppink;
-}
+
+/* ============================================================
+   RESPONSIVE — 667px (large phones landscape)
+   ============================================================ */
 @media only screen and (min-width: 667px) {
-    /* For iPhone 6+++ landscape mode: */
-    #simulator {}
-    #data {
-        width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 60px;
-    }
-    div#data h2 {}
-    div#data .column {}
-    div#data span.label {}
-    div#data select {}
-    div#data button {}
-    /* #data bottom columns */
-    div#data .column-lg {}
     div#data .column-lg button {
-        width: 475px;
+        width: 100%;
     }
-
-    /* Job Pool */
-    #job-pool {}
-    div#job-pool table {}
-    div#job-pool table tr {}
-    div#job-pool table tr th {
-        font-size: 18px;
-    }
-    div#job-pool table tr td {
-        font-size: 18px;
-    }
-
-    /* CPU */
-    #cpu {}
-    div#cpu .cpu-col {}
-    div#cpu span {}
-    div#cpu h3 {}
-
-    /* Ready Queue */
-    #ready-queue {}
-    div#ready-queue div.ready-bars {}
-    span.ready-bar {}
-    /* Average wait and turnaround times */
-    #wait-turnarounds {}
-    div#wait-turnarounds div.col {}
-    div#wait-turnarounds span {}
-    div#wait-turnarounds h3 {}
-
-    /* Gantt Chart */
-    #live-chart {}
-    div#live-chart span.ready-bar {}
-
-    /* Footer */
-    #footer {}
-    #footer p {}
-    #footer p#personal {}
-    #footer a {}
-    #footer a:hover {}
 }
+
+/* ============================================================
+   RESPONSIVE — 768px (tablets)
+   ============================================================ */
 @media only screen and (min-width: 768px) {
-    /* For tablets: */
-    #simulator {}
-    #data {}
-    div#data h2 {}
-    div#data .column {}
-    div#data span.label {}
-    div#data select {}
-    div#data button {}
-    /* #data bottom columns */
-    div#data .column-lg {}
-    div#data .column-lg button {}
-
-    /* Job Pool */
-    #job-pool {}
-    div#job-pool table {}
-    div#job-pool table tr {}
-    div#job-pool table tr th {}
-    div#job-pool table tr td {}
-
-    /* CPU */
-    #cpu {}
-    div#cpu .cpu-col {}
-    div#cpu span {}
-    div#cpu h3 {}
-
-    /* Ready Queue */
-    #ready-queue {}
-    div#ready-queue div.ready-bars {}
-    span.ready-bar {}
-    /* Average wait and turnaround times */
-    #wait-turnarounds {}
-    div#wait-turnarounds div.col {}
-    div#wait-turnarounds span {}
-    div#wait-turnarounds h3 {}
-
-    /* Gantt Chart */
-    #live-chart {}
-    div#live-chart span.ready-bar {}
-
-    /* Footer */
-    #footer {}
-    #footer p {}
-    #footer p#personal {}
-    #footer a {}
-    #footer a:hover {}
-}
-@media only screen and (min-width: 1024px) {
-    /* iPad Pros:  */
-    #simulator {}
-    #data {
-        margin-left: 0;
-        margin-right: 0;
-        display: inline-block;
-        width: 400px;
-    }
-    div#data h2 {
-        font-size: 32px;
-    }
-    div#data .column {
-        font-size: 28px;
-        width: 170px;
-    }
-    div#data span.label {}
-    div#data select {
-        font-size: 28px;
-        width: 170px;
-    }
-    div#data button {
-        font-size: 28px;
-        width: 170px;
-    }
-    /* #data bottom columns */
-    div#data .column-lg {}
-    div#data .column-lg button {
-        width: 365px;
-    }
-
-    /* Job Pool */
-    #job-pool {
-        width: 500px;
-        display: inline-block;
-        vertical-align: top;
-        padding-top: 20px;
-    }
-    div#job-pool h2 {
-        font-size: 32px;
-    }
-    div#job-pool table {}
-    div#job-pool table tr {}
-    div#job-pool table tr th {}
-    div#job-pool table tr td {
-        font-size: 28px;
-    }
-
-    /* CPU */
-    #cpu {
-        width: 410px;
-        display: inline-block;
-    }
-    #cpu h2 {
-        font-size: 32px;
-    }
-    div#cpu .cpu-col {
-        width: 120px;
-    }
-    div#cpu span {
-        font-size: 22px;
-    }
-    div#cpu h3 {
-        font-size: 24px;
-    }
-
-    /* Ready Queue */
-    #ready-queue {
-        width: 600px;
-        display: inline-block;
-        vertical-align: top;
-        padding-top: 20px;
-    }
-    #ready-queue h2 {
-        font-size: 32px;
-    }
-    div#ready-queue div.ready-bars {
-        padding-top: 30px;
-    }
-    span.ready-bar {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        font-size: 28px;
-    }
-    /* Average wait and turnaround times */
-    #wait-turnarounds {
-        width: 410px;
-        display: inline-block;
-        vertical-align: top;
-    }
-    #wait-turnarounds h2 {
-        font-size: 32px;
-    }
-    div#wait-turnarounds div.col {}
-    div#wait-turnarounds span {
-        font-size: 22px;
-    }
-    div#wait-turnarounds h3 {
-        font-size: 24px;
-    }
-
-    /* Gantt Chart */
-    #live-chart {
-        width: 500px;
-        display: inline-block;
-        height: 200px;
-    }
-    #live-chart h2 {
-        font-size: 32px;
-        padding-bottom: 20px;
-    }
-    div#live-chart span.ready-bar {}
-
-    /* Footer */
-    #footer {}
-    #footer p {
-        display: inline-block;
-        float: left;
-        font-size: 24px;
-        margin-left: 20px;
-        padding-top: 15px;
-    }
-    #footer p#personal {
-        float: right;
-        margin-right: 20px;
-        padding-top: 15px;
-    }
-    #footer a {}
-    #footer a:hover {}
-}
-@media only screen and (min-width: 1366px) {
-    /* Desktop screens and iPad pro sideways: */
-    #simulator {}
-    #data {
-        width: 700px;
-    }
-    div#data h2 {
-        font-size: 26px;
-    }
-    div#data .column {
-        width: 150px;
-    }
-    div#data span.label {
-        font-size: 22px;
-    }
-    div#data select {
-        font-size: 22px;
-    }
-    div#data button {
-        font-size: 22px;
-    }
-    /* #data bottom columns */
-    div#data .column-lg {}
-    div#data .column-lg button {
-        width: 695px;
-    }
-
-    /* Job Pool */
-    #job-pool {}
-    div#job-pool table {}
-    div#job-pool table tr {}
     div#job-pool table tr th {
-        font-size: 20px;
+        font-size: 13px;
+        padding: 11px 14px;
     }
     div#job-pool table tr td {
-        font-size: 20px;
+        font-size: 14px;
+        padding: 11px 14px;
     }
-
-    /* CPU */
-    #cpu {}
-    div#cpu .cpu-col {}
-    div#cpu span {}
-    div#cpu h3 {}
-
-    /* Ready Queue */
-    #ready-queue {}
-    div#ready-queue div.ready-bars {}
-    span.ready-bar {}
-    /* Average wait and turnaround times */
-    #wait-turnarounds {}
-    div#wait-turnarounds div.col {}
-    div#wait-turnarounds span {}
-    div#wait-turnarounds h3 {}
-
-    /* Gantt Chart */
-    #live-chart {
-        width: 900px;
-    }
-    div#live-chart span.ready-bar {}
-
-    /* Footer */
-    #footer {}
-    #footer p {}
-    #footer p#personal {}
-    #footer a {}
-    #footer a:hover {}
 }
-@media only screen and (min-width: 1500px) {
-    /* Desktop screens 1500px - 1740px : */
-    #simulator {}
-    #data {}
-    div#data h2 {}
-    div#data .column {}
-    div#data span.label {}
-    div#data select {}
-    div#data button {}
-    /* #data bottom columns */
-    div#data .column-lg {}
-    div#data .column-lg button {}
 
-    /* Job Pool */
-    #job-pool {
-        width: 700px;
+/* ============================================================
+   RESPONSIVE — 1024px (desktop layout begins)
+   ============================================================ */
+@media only screen and (min-width: 1024px) {
+    #simulator {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-areas:
+            "controls  controls"
+            "cpu       averages"
+            "jobpool   queue"
+            "jobpool   chart";
+        column-gap: 16px;
     }
-    div#job-pool table {}
-    div#job-pool table tr {}
-    div#job-pool table tr th {}
-    div#job-pool table tr td {}
 
-    /* CPU */
-    #cpu {}
-    div#cpu .cpu-col {}
-    div#cpu span {}
-    div#cpu h3 {}
+    #data             { grid-area: controls; }
+    #job-pool         { grid-area: jobpool; align-self: start; }
+    #cpu              { grid-area: cpu;      min-width: 0; }
+    #ready-queue      { grid-area: queue;    min-width: 0; }
+    #wait-turnarounds { grid-area: averages; min-width: 0; }
+    #live-chart       { grid-area: chart;    min-width: 0; }
 
-    /* Ready Queue */
-    #ready-queue {
-        width: 940px;
+    div#data .column {
+        flex: 1 1 130px;
     }
-    div#ready-queue div.ready-bars {}
-    span.ready-bar {}
-    /* Average wait and turnaround times */
-    #wait-turnarounds {}
-    div#wait-turnarounds div.col {}
-    div#wait-turnarounds span {}
-    div#wait-turnarounds h3 {}
 
-    /* Gantt Chart */
-    #live-chart {
-        width: 1050px;
-    }
-    div#live-chart span.ready-bar {}
-
-    /* Footer */
-    #footer {}
-    #footer p {}
-    #footer p#personal {}
-    #footer a {}
-    #footer a:hover {}
 }
-@media only screen and (min-width: 1740px) {
-    /* Desktop screens: */
-    #simulator {}
-    #data {}
-    div#data h2 {}
-    div#data .column {}
-    div#data span.label {}
-    div#data select {}
-    div#data button {}
-    /* #data bottom columns */
-    div#data .column-lg {}
-    div#data .column-lg button {}
 
-    /* Job Pool */
-    #job-pool {}
-    div#job-pool table {}
-    div#job-pool table tr {}
-    div#job-pool table tr th {}
-    div#job-pool table tr td {}
+/* ============================================================
+   RESPONSIVE — 1366px (large desktop)
+   ============================================================ */
+@media only screen and (min-width: 1366px) {
+    #simulator {
+        grid-template-columns: 1.5fr 1fr;
+    }
 
-    /* CPU */
-    #cpu {}
-    div#cpu .cpu-col {}
-    div#cpu span {}
-    div#cpu h3 {}
+    div#data select,
+    div#data button {
+        font-size: 13px;
+    }
 
-    /* Ready Queue */
-    #ready-queue {}
-    div#ready-queue div.ready-bars {}
-    span.ready-bar {}
-    /* Average wait and turnaround times */
-    #wait-turnarounds {}
-    div#wait-turnarounds div.col {}
-    div#wait-turnarounds span {}
-    div#wait-turnarounds h3 {}
-
-    /* Gantt Chart */
-    #live-chart {}
-    div#live-chart span.ready-bar {}
-
-    /* Footer */
-    #footer {}
-    #footer p {}
-    #footer p#personal {}
-    #footer a {}
-    #footer a:hover {}
 }
+
+/* ============================================================
+   RESPONSIVE — 1800px (wide screens)
+   ============================================================ */
 @media only screen and (min-width: 1800px) {
-    /* Desktop screens (2000 over): */
-    #simulator {}
-    #data {
-        padding-right: 100px;
+    #simulator {
+        grid-template-columns: 1.5fr 1fr;
     }
-    div#data h2 {}
-    div#data .column {}
-    div#data span.label {}
-    div#data select {}
-    div#data button {}
-    /* #data bottom columns */
-    div#data .column-lg {}
-    div#data .column-lg button {}
 
-    /* Job Pool */
-    #job-pool {
-        width: 990px;
+    body {
+        font-size: 15px;
     }
-    div#job-pool table {}
-    div#job-pool table tr {}
-    div#job-pool table tr th {}
-    div#job-pool table tr td {}
-
-    /* CPU */
-    #cpu {}
-    div#cpu .cpu-col {}
-    div#cpu span {}
-    div#cpu h3 {}
-
-    /* Ready Queue */
-    #ready-queue {
-        width: 1380px;
-    }
-    div#ready-queue div.ready-bars {}
-    span.ready-bar {}
-    /* Average wait and turnaround times */
-    #wait-turnarounds {}
-    div#wait-turnarounds div.col {}
-    div#wait-turnarounds span {}
-    div#wait-turnarounds h3 {}
-
-    /* Gantt Chart */
-    #live-chart {
-        width: 1380px;
-    }
-    div#live-chart span.ready-bar {}
-
-    /* Footer */
-    #footer {}
-    #footer p {}
-    #footer p#personal {}
-    #footer a {}
-    #footer a:hover {}
-}
-@media only screen and (min-width: 2500px) {
-    /* Desktop screens (2500 over): */
-    #simulator {}
-    #data {}
-    div#data h2 {}
-    div#data .column {}
-    div#data span.label {}
-    div#data select {}
-    div#data button {}
-    /* #data bottom columns */
-    div#data .column-lg {}
-    div#data .column-lg button {}
-
-    /* Job Pool */
-    #job-pool {
-        width: 1690px;
-    }
-    div#job-pool table {}
-    div#job-pool table tr {}
-    div#job-pool table tr th {}
-    div#job-pool table tr td {}
-
-    /* CPU */
-    #cpu {}
-    div#cpu .cpu-col {}
-    div#cpu span {}
-    div#cpu h3 {}
-
-    /* Ready Queue */
-    #ready-queue {}
-    div#ready-queue div.ready-bars {}
-    span.ready-bar {}
-    /* Average wait and turnaround times */
-    #wait-turnarounds {}
-    div#wait-turnarounds div.col {}
-    div#wait-turnarounds span {}
-    div#wait-turnarounds h3 {}
-
-    /* Gantt Chart */
-    #live-chart {}
-    div#live-chart span.ready-bar {}
-
-    /* Footer */
-    #footer {}
-    #footer p {}
-    #footer p#personal {}
-    #footer a {}
-    #footer a:hover {}
 }
